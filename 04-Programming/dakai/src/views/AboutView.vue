@@ -1,5 +1,16 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <DramaCard/>
   </div>
 </template>
+
+<script>
+  import DramaCard from '../components/DramaCard.vue'
+
+  export default {
+    name: 'CardView',
+    components:{
+      DramaCard
+    }
+  }
+</script>
