@@ -28,13 +28,13 @@ nav {
   }
 }
 
-@media(max-width:1903px){
+@media(min-width:1920px){
 
 }
-@media(max-width:1280px){
+@media(min-width:1280px){
   
 }
-@media(max-width:768px){
+@media(min-width:768px){
   
 }
 </style>
