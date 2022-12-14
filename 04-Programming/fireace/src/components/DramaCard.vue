@@ -28,6 +28,10 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition-duration: 0.5s;
+}
+.smaller{
+    scale: 0.5 0.5 ;
 }
 @media(min-width:1920px){
 
@@ -49,7 +53,7 @@
     const context = require.context("../assets/", false, /\.(png|jpg|gif|jpeg|webp|ico)$/);
     //let context turn into routes
     const images = context.keys().map(context);
-
+    
     export default{
         data(){
             return{
@@ -57,8 +61,16 @@
             }
         },
         mounted() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach((card)=>{
+                card.addEventListener('click',()=>{
+                    card.classList.toggle("smaller");
+                });
+            });
         },
         methods:{
         }
     }
+    
 </script>
