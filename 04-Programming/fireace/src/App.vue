@@ -1,9 +1,9 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/Menu">Menu</router-link>|
-    <router-link to="/Items">Items</router-link>|
-    <router-link to="/Contact">Contact</router-link>|
+    <router-link to="/Menu">Menu</router-link> |
+    <router-link to="/Items">Items</router-link> |
+    <router-link to="/Contact">Contact</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
@@ -18,8 +18,14 @@
   color: #2c3e50;
 }
 
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
 nav {
   padding: 30px;
+  background-color: #eedcdb;
 
   a {
     font-weight: bold;

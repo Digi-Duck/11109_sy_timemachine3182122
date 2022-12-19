@@ -4,7 +4,7 @@
             <div class="card" :style="{backgroundImage: 'url(' + pic + ')'}"></div>
         </div>
     </div>
-</template>
+</template>>
 
 <style scoped lang="scss">
 .card-banner{
@@ -16,7 +16,6 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    color: black;
 }
 .card-banner>div{
     width: calc( 50% - 5px);
@@ -51,10 +50,10 @@
 
 <script>
     // load every picture files in context. 
-    const context = require.context("../assets/", false, /\.(png|jpg|gif|jpeg|webp|ico)$/);
+    const context = require.context("../assets/Goods/", false, /\.(png|jpg|gif|jpeg|webp|ico)$/);
     //let context turn into routes
     const images = context.keys().map(context);
-    
+
     export default{
         data(){
             return{
@@ -73,5 +72,4 @@
         methods:{
         }
     }
-    
 </script>
