@@ -6,7 +6,7 @@
   import GoodsCard from '../components/GoodsCard.vue'
 
   export default {
-    name: 'CardView',
+    name: 'ItemsView',
     components:{
       GoodsCard
     }

@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="outside">
-      <div class="door-background">
+      <div class="door-background sticky">
         <div class="door">
           <div class="store" :style="{backgroundImage:'url(' + store + ')'}">
           </div>
@@ -25,7 +25,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: relative;
 }
 
 .guitar-background{
@@ -48,19 +47,19 @@
 }
 
 .outside{
-  width: 100%;
-  height: 600vh;
+  width: 100vw;
+  height: 200vh;
   background-color: #eedcdb;
 }
 .door-background{
   width: 100%;
   height: 100vh;
   transition: linear;
+  overflow: hidden;
 }
 
 .door {
-  position: absolute;
-  width: 100%;
+  width: 100vw;
   height: auto;
   clip-path: ellipse(25% 75% at 50% 100%);
   scale: 1;
@@ -71,17 +70,19 @@
   width: 100vw;
   height: 100vh;
   left: 0px;
-  scale: 1.3;
+  scale: 1.1;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 }
-.fixed{
+
+.sticky{
   z-index: 1;
-  position: fixed;
-  left: 0%;
-  top: 0%;
+  position: sticky;
+  top: 0px;
+  left: 0px;
 }
+
 </style>
 
 <script>
@@ -99,14 +100,13 @@ export default {
 
   },
   mounted(){
-    const doorBackground = document.querySelector('.door-background');
+    // const doorBackground = document.querySelector('.door-background');
     let door = document.querySelector('.door');
     let store = document.querySelector('.store');
-
-
+    
+    
     window.addEventListener('scroll', ()=>{
-      if ( window.scrollY >= window.innerHeight && window.scrollY < window.innerHeight * 2 ){
-        doorBackground.classList.add('fixed');
+      if ( window.scrollY >= window.innerHeight && window.scrollY < (window.innerHeight * 2) ){
         
         let scale = window.scrollY / window.innerHeight;
         let width = ((( scale - 1 ) * 50 ) + 50 );
@@ -116,13 +116,12 @@ export default {
         door.style.scale = scale;
         // clip-path: ellipse(25% 75% at 50% 100%);
         door.style.clipPath ='ellipse('+ (width / 2) + '% '+ ( (width/2) + 50 )+ '% at '+ 50 + '% '+ 100 +'%)';
-        store.style.scale = (1.3 / ( scale ));
+        store.style.scale = (1.1 / ( scale ));
       }
       else if (window.scrollY < window.innerHeight){
-        doorBackground.classList.remove('fixed');
         door.style.scale = 1;
         door.style.clipPath = 'ellipse(25% 75% at 50% 100%)';
-        store.style.scale = 1.3;
+        store.style.scale = 1.1;
       }
       
     });

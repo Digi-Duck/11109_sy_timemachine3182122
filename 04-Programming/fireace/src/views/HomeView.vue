@@ -1,17 +1,20 @@
 <template>
   <div class="home">
-    <MainComponent/>
+    <MainEffect/>
+    <NavBar/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import MainComponent from '@/components/MainComponents.vue'
+import MainEffect from '@/components/MainEffect.vue';
+import NavBar from '@/components/NavBar.vue'
 
 export default {
   name: 'MainCompoent',
   components: {
-    MainComponent
+    MainEffect,
+    NavBar
   }
 }
 </script>
