@@ -10,9 +10,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./img/fireaceLogo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Zeyada&display=swap" rel="stylesheet">
     <title>恆志的店</title>
     <style>
         /* setting */
@@ -230,7 +231,7 @@
             background-repeat: repeat;
             background-size: auto;
             color: #846D5A;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Noto Sans TC', sans-serif;
             padding: 30px;
             display: flex;
             flex-direction: column;
@@ -307,6 +308,7 @@
             letter-spacing: 0.25em;
             font-size: 32px;
             font-weight: 400;
+            font-family: 'Noto Sans TC', sans-serif;
         }
 
         .dotted-line {
@@ -332,6 +334,10 @@
             background-position: center;
         }
 
+        .chinese{
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
         .card>p {
             color: #846D5A;
             font-weight: 400;
@@ -342,7 +348,7 @@
 
         .news-zone {
             width: 100vw;
-            height: 681px;
+            height: auto;
             background-image: url('./img/bg-img/background\ 3.png');
             background-repeat: repeat;
             background-size: auto;
@@ -362,14 +368,13 @@
 
         .fb-zone {
             width: 340px;
-            height: 204px;
+            height: 443px;
             background-color: #938F8F;
         }
 
         .ig-zone {
             width: 340px;
-            height: 204px;
-            background-color: #938F8F;
+            height: auto;
         }
 
         @media(min-width:1920px) {}
@@ -443,7 +448,7 @@
             </div>
             <div v-for=" ( select , index )  in cards" :key="index" class="card">
                 <div class="card-pic" :style="{backgroundImage: 'url('+select.pic+')'}"></div>
-                <p>{{ select.name }}</p>
+                <p class="chinese">{{ select.name }}</p>
                 <p>{{ select.nameEng }}</p>
             </div>
         </div>
@@ -459,7 +464,7 @@
             </div>
             <div class="fb-zone">
                 <div class="fb-page" data-href="https://www.facebook.com/fireacestore/" data-tabs="timeline"
-                    data-width="340" data-height="204" data-small-header="true" data-adapt-container-width="true"
+                    data-width="340" data-height="443" data-small-header="true" data-adapt-container-width="true"
                     data-hide-cover="false" data-show-facepile="false">
                     <blockquote cite="https://www.facebook.com/fireacestore/" class="fb-xfbml-parse-ignore"><a
                             href="https://www.facebook.com/fireacestore/">恆志的店</a></blockquote>
