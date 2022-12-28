@@ -35,7 +35,7 @@
         nav {
             width: 100%;
             height: 87px;
-            padding: 32px 0px 0px 0px;
+            padding: 14px 0px;
             position: absolute;
             z-index: 1;
         }
@@ -63,6 +63,10 @@
 
         .nav-bar>i {
             font-size: 23px;
+        }
+
+        .nav-center {
+            display: none;
         }
 
         .banner-zone {
@@ -146,6 +150,13 @@
             transform: translate(0%, -50%);
         }
 
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
         .footer-logo {
             width: 121px;
             height: 119px;
@@ -158,6 +169,7 @@
             width: 328px;
             height: 87px;
             margin-bottom: 26px;
+            padding-left: 44px;
         }
 
         .footer-text>p {
@@ -180,10 +192,29 @@
             display: flex;
             justify-content: center;
         }
-        
+
         @media(min-width:768px) {
-            
-            /* nav doesn't need to change */
+
+            /* nav  */
+            nav {
+                height: 110px;
+                padding: 27px 0px;
+            }
+
+            .logo {
+                width: 112px;
+                height: 110px;
+                right: 25px;
+            }
+
+            .banner-zone {
+                height: 570px;
+            }
+
+            .banner-cover {
+                height: 570px;
+            }
+
             /* footer */
             footer {
                 height: 393px;
@@ -191,30 +222,34 @@
                 padding-left: 46px;
                 padding-top: 25px;
             }
-            
+
             .guitarist {
                 width: 124px;
                 height: 198px;
                 margin-right: 37px;
             }
-            
+
+            .footer-left {
+                align-items: flex-start;
+            }
+
             footer p {
                 width: 431px;
                 padding-left: 40px;
             }
-            
+
             footer>p {
                 justify-content: flex-start;
             }
-            
-            .footer-logo{
+
+            .footer-logo {
                 margin-bottom: 26px;
             }
-            
+
             .footer-text {
                 display: none;
             }
-            
+
             .footer-text768 {
                 display: flex;
                 width: 431px;
@@ -222,7 +257,7 @@
                 margin-bottom: 17px;
                 flex-direction: column;
             }
-            
+
             .footer-text768>p {
                 font-size: 14px;
                 margin: 0px;
@@ -231,21 +266,123 @@
         }
 
         @media(min-width:1280px) {
+
             /* nav */
-        
+            nav {
+                height: 167px;
+                padding: 56px 0px;
+                font-family: 'Noto Sans TC', sans-serif;
+            }
+
+            .logo {
+                width: 170px;
+                height: 167px;
+                right: 50%;
+                transform: translate(50%);
+            }
+
+            .nav-bar>i {
+                display: none;
+            }
+
+            .nav-bar {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-center {
+                display: flex;
+                width: 790px;
+                height: 24px;
+                justify-content: space-between;
+            }
+
+            .nav-left {
+                width: 280px;
+                display: flex;
+                font-size: 20px;
+            }
+
+            .nav-left>div {
+                margin: 0px 30px;
+            }
+
+            .nav-right {
+                width: 280px;
+                display: flex;
+                font-size: 20px;
+            }
+
+            .nav-right>div {
+                margin: 0px 30px;
+                width: 80px;
+            }
+
+            .links {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+
             /* footer */
-            .guitarist{
+            .guitarist {
                 margin-right: 81px;
             }
-            footer{
-                height: 359px;
+
+            footer {
+                height: 250px;
                 flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 80px;
+                padding-top: 0px;
             }
+
+            .footer-left {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
         }
 
-        @media(min-width:1920px) {}
+        @media(min-width:1903px) {
 
-        </style>
+            /* nav */
+            .nav-center {
+                width: 860px;
+            }
+
+            .nav-left {
+                width: 340px;
+            }
+
+            .nav-left>div {
+                margin: 0px 45px;
+            }
+
+            .nav-right {
+                width: 340px;
+            }
+
+            .nav-right>div {
+                margin: 0px 45px;
+            }
+
+            /* footer */
+            .guitarist {
+                margin-right: 85px;
+            }
+
+            footer>p {
+                width: 368px;
+                margin-right: 231px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -255,6 +392,19 @@
         <nav>
             <div class="nav-bar">
                 <i class="fa-solid fa-bars"></i>
+                <div class="nav-center">
+                    <div class="nav-left">
+                        <div class="introduce">商品介紹</div>
+                        <div class="menu">飲食菜單</div>
+                    </div>
+                    <div class="nav-right">
+                        <div class="contact">聯絡我們</div>
+                        <div class="links">
+                            <div class="facebook"><i class="fa-brands fa-facebook-f"></i></div>
+                            <div class="instagram"><i class="fa-brands fa-square-instagram"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <img class="logo" src="./img/fireaceLogo.png" alt="">
         </nav>
@@ -277,15 +427,17 @@
         <!-- footer -->
         <footer>
             <div class="guitarist"></div>
-            <div class="footer-logo"></div>
-            <div class="footer-text">
-                <p>電話:06- 273 1699</p>
-                <p>地址:台南市永康區國光五街34號</p>
-                <p>社群:FB粉絲頁。 IG。 請搜尋「恆志的店」</p>
-            </div>
-            <div class="footer-text768">
-                <p>電話:06- 273 1699 /地址:台南市永康區國光五街34號</p>
-                <p>社群:FB粉絲頁。 IG。 請搜尋「恆志的店」</p>
+            <div class="footer-left">
+                <div class="footer-logo"></div>
+                <div class="footer-text">
+                    <p>電話:06- 273 1699</p>
+                    <p>地址:台南市永康區國光五街34號</p>
+                    <p>社群:FB粉絲頁。 IG。 請搜尋「恆志的店」</p>
+                </div>
+                <div class="footer-text768">
+                    <p>電話:06- 273 1699 /地址:台南市永康區國光五街34號</p>
+                    <p>社群:FB粉絲頁。 IG。 請搜尋「恆志的店」</p>
+                </div>
             </div>
             <p>hengzhi © Copyright All Rights Reserved.</p>
         </footer>
