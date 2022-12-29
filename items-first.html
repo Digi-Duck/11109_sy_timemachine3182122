@@ -100,6 +100,24 @@
             opacity: 1;
         }
 
+        /* introduce */
+        .introduce-zone {
+            width: 100%;
+            height: 845px;
+            background-image: url(./img/bg-img/product-375.png);
+            background-repeat: repeat;
+            background-size: contain;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h2 {
+            margin: 0px;
+        }
+
+        /* footer */
         footer {
             width: 100%;
             height: 316px;
@@ -281,6 +299,8 @@
 
             .nav-left>div {
                 margin: 0px 30px;
+                width: 80px;
+                height: 24px;
             }
 
             .nav-right {
@@ -388,22 +408,45 @@
             </div>
         </div>
 
-        <!-- swiper zone -->
-        <div class="swiper-zone">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide"><i class="fa-solid fa-bars"></i></div>
+        <!-- introduce -->
+        <div class="introduce-zone">
+            <div class="route"></div>
+            <div class="pages">
+                <h2>商品介紹</h2>
+                <div class="link-cake"><a href="">蛋糕</a></div>
+                <div class="link-snacks"><a href="">手做點心</a></div>
+                <div class="link-drinks">
+                    飲品
+                    <ul class="link-drinks-contain">
+                        <li><a href="">咖啡</a></li>
+                        <li><a href="">養生飲品</a></li>
+                        <li><a href="">飲品</a></li>
+                    </ul>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+            </div>
+            <div class="cake-block">
+                <div class="block-left">
+                    <h2 class="chi">蛋糕</h2>
+                    <h2 class="eng">cake</h2>
+                </div>
+                <div class="block-right"><img src="./img/introduce/戚風蛋糕.png" alt=""></div>
+            </div>
+            <div class="snacks-block">
+                <div class="block-left">
+                    <h2 class="chi">手做點心</h2>
+                    <h2 class="eng">Homemade-snack</h2>
+                </div>
+                <div class="block-right"><img src="./img/introduce/20953705_1198401686971942_8234353371634747719_n.png" alt=""></div>
+            </div>
+            <div class="drinks-block">
+                <div class="block-left">
+                    <h2 class="chi">飲品</h2>
+                    <h2 class="eng">drinks</h2>
+                </div>
+                <div class="block-right"><img src="./img/introduce/2.png" alt=""></div>
             </div>
         </div>
+
         <!-- footer -->
         <footer>
             <div class="guitarist"></div>
