@@ -104,10 +104,32 @@
 
         /* menu */
 
-        h1 {
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.menu-title{
+width: 100%;
+margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            
+}
+
+
+h1 {
+    
+    width: 150px;
             font-size: 20px;
             text-align: center;
             line-height: 20px;
+            padding: 10px 0;
+            margin: 0;
+            border-bottom: 2px dotted black;
         }
 
         .menu1 {
@@ -119,17 +141,104 @@
         }
 
         .price-unit {
-            padding: 0 15px;
+            font-size: 14px;
+    line-height: 20px;
             text-align: end;
         }
 
+/* 單純價格 */
+.price1{
+    padding: 8px 40px;
+}
+
+/* 價格、冰、熱 */
+.price2{
+    padding: 8px 10px;
+}
+
+.price3{
+    padding: 8px 10px;
+}
+
+
+/* 項目欄 */
         .field {
             background-color: #E8BF9E;
+            
         }
 
-        table {
-            width: 100%;
+        
+        .left-field {
+                        width: 223px;
         }
+
+.left-field1{
+    width: 221px;
+}
+
+
+        /* 商品分類 */
+.title{
+    padding: 8px 0 8px 20px;
+    text-align: start;
+}
+
+th{
+    font-size: 16px;
+    padding: 8px 0;
+    line-height: 16px;
+    color: #694528;
+      }
+
+
+td{
+    color: #524B45;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+      .product{
+padding-left: 20px;
+      }
+
+
+      .textmid{
+        text-align: center;
+      }
+
+    .smalltext{
+        
+        font-size: 14px;
+    }    
+
+
+.notice{
+    margin: 0;
+padding-left: 20px;
+font-size: 16px;
+line-height: 20px;
+color: #524B45;
+}
+
+.notice a{
+    font-weight: bolder;
+    color: #694528;
+    text-decoration: none;
+}
+
+.menu-download{
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.menu-download a{
+    border: 1px solid black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
 
         /* footer */
 
@@ -421,133 +530,136 @@
             </div>
         </div>
 
+
+
         <!-- menus -->
         <div class="menu1">
 
             <!-- 商品介紹 -->
-            <h1>商品介紹</h1>
+            <div class="menu-title">
+                <h1>商品介紹</h1></div>
 
             <div class="price-unit">價格單位: NTD</div>
 
             <!-- cakes -->
             <table>
                 <tr class="field">
-                    <th>戚風蛋糕</th>
-                    <th>價格</th>
+                    <th class="left-field title">戚風蛋糕</th>
+                    <th class="price1">價格</th>
                 </tr>
                 <tr>
-                    <td>紅玉紅茶/百香果/香橙/香蕉</td>
-                    <td>60</td>
+                    <td class="product">紅玉紅茶/百香果/香橙/香蕉</td>
+                    <td class="textmid">60</td>
                 </tr>
             </table>
             <table>
                 <tr class="field">
-                    <th>蛋糕</th>
-                    <th>價格</th>
+                    <th class="left-field title">蛋糕</th>
+                    <th class="price1">價格</th>
                 </tr>
 
                 <tr>
-                    <td>愛爾蘭奶酒慕斯蛋糕</td>
-                    <td>90</td>
+                    <td class="product">愛爾蘭奶酒慕斯蛋糕</td>
+                    <td class="textmid">90</td>
                 </tr>
                 <tr>
-                    <td>老奶奶檸檬蛋糕</td>
-                    <td>60</td>
+                    <td class="product">老奶奶檸檬蛋糕</td>
+                    <td class="textmid">60</td>
                 </tr>
                 <tr>
-                    <td>濃醇巧克力蛋糕</td>
-                    <td>60</td>
+                    <td class="product">濃醇巧克力蛋糕</td>
+                    <td class="textmid">60</td>
                 </tr>
                 <tr>
-                    <td>重乳酪蛋糕</td>
-                    <td>85</td>
+                    <td class="product">重乳酪蛋糕</td>
+                    <td class="textmid">85</td>
                 </tr>
                 <tr>
-                    <td>原味巴斯克蛋糕</td>
-                    <td>60</td>
+                    <td class="product">原味巴斯克蛋糕</td>
+                    <td class="textmid">60</td>
                 </tr>
                 <tr>
-                    <td>蜜紅豆巴斯克蛋糕</td>
-                    <td>70</td>
+                    <td class="product">蜜紅豆巴斯克蛋糕</td>
+                    <td class="textmid">70</td>
                 </tr>
             </table>
 
             <!-- snacks -->
             <table>
                 <tr class="field">
-                    <th>手作點心</th>
-                    <th>價格</th>
+                    <th class="left-field title">手作點心</th>
+                    <th class="price1">價格</th>
                 </tr>
                 <tr>
-                    <td>檸檬塔</td>
-                    <td>80</td>
+                    <td class="product">檸檬塔</td>
+                    <td class="textmid">80</td>
                 </tr>
                 <tr>
-                    <td>草莓塔(冬季限定)</td>
-                    <td>110</td>
+                    <td class="product">草莓塔(冬季限定)</td>
+                    <td class="textmid">110</td>
                 </tr>
                 <tr>
-                    <td>義式硬布丁</td>
-                    <td>60</td>
+                    <td class="product">義式硬布丁</td>
+                    <td class="textmid">60</td>
                 </tr>
                 <tr>
-                    <td>低卡手工餅乾</td>
-                    <td>70/100克</td>
+                    <td class="product">低卡手工餅乾</td>
+                    <td class="textmid">70/100克</td>
                 </tr>
                 <tr>
-                    <td>杏仁瓦片(原味/辣味)</td>
-                    <td>120/100克</td>
+                    <td class="product">杏仁瓦片(原味/辣味)</td>
+                    <td class="textmid">120/100克</td>
                 </tr>
             </table>
 
             <!-- coffee -->
             <table>
                 <tr class="field">
-                    <th>咖啡</th>
-                    <th>價格</th>
-                    <th>冰</th>
-                    <th>熱</th>
+                    <th class="left-field1">咖啡</th>
+                    <th class="price2">價格</th>
+                    <th class="price2">冰</th>
+                    <th class="price2">熱</th>
                 </tr>
                 <tr>
-                    <td>單品咖啡(當日豆單)</td>
+                    <td class="product">單品咖啡(當日豆單)</td>
                     <td></td>
                     <td></td>
-                    <td>O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>拿鐵咖啡</td>
-                    <td>110</td>
-                    <td>O</td>
-                    <td>O</td>
+                    <td class="product">拿鐵咖啡</td>
+                    <td class="textmid">110</td>
+                    <td class="textmid">O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>美式咖啡</td>
-                    <td>55</td>
-                    <td>O</td>
-                    <td>O</td>
+                    <td class="product">美式咖啡</td>
+                    <td class="textmid">55</td>
+                    <td class="textmid">O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>卡布奇諾</td>
-                    <td>65</td>
+                    <td class="product">卡布奇諾</td>
+                    <td class="textmid">65</td>
                     <td></td>
-                    <td>O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>焦糖瑪奇朵</td>
-                    <td>75</td>
+                    <td class="product">焦糖瑪奇朵</td>
+                    <td class="textmid">75</td>
                     <td></td>
-                    <td>O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>巧克力摩卡</td>
-                    <td>75</td>
+                    <td class="product">巧克力摩卡</td>
+                    <td class="textmid">75</td>
                     <td></td>
-                    <td>O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>400次咖啡</td>
-                    <td>110</td>
-                    <td>O</td>
+                    <td class="product">400次咖啡</td>
+                    <td class="textmid">110</td>
+                    <td class="textmid">O</td>
                     <td></td>
                 </tr>
             </table>
@@ -555,33 +667,31 @@
             <!-- drinks -->
             <table>
                 <tr class="field">
-                    <th>飲品</th>
-                    <th>價格</th>
-                    <th>冰</th>
-                    <th>熱</th>
+                    <th class="left-field1">飲品</th>
+                    <th class="price2">價格</th>
+                    <th class="price2">冰</th>
+                    <th class="price2">熱</th>
                 </tr>
                 <tr>
-                    <td>抹茶拿鐵</td>
-                    <td>110</td>
-                    <td>O</td>
-                    <td>O</td>
+                    <td class="product">抹茶拿鐵</td>
+                    <td class="textmid">110</td>
+                    <td class="textmid">O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>桑椹牛奶飲</td>
-                    <td>70</td>
-                    <td>O</td>
+                    <td class="product">桑椹牛奶飲</td>
+                    <td class="textmid">70</td>
+                    <td class="textmid">O</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>鍋煮奶茶</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="product">鍋煮奶茶</td>
+                    <td colspan="3" class="textmid ">內用60/外帶70</td>
                 </tr>
                 <tr>
-                    <td>水果冰沙</td>
-                    <td>65</td>
-                    <td>O</td>
+                    <td class="product">水果冰沙</td>
+                    <td class="textmid">65</td>
+                    <td class="textmid">O</td>
                     <td></td>
                 </tr>
             </table>
@@ -589,148 +699,165 @@
             <!-- healthy-drink -->
             <table>
                 <tr class="field">
-                    <th>養生茶飲</th>
-                    <th>價格</th>
-                    <th>冰</th>
-                    <th>熱</th>
+                    <th class="left-field1">養生茶飲</th>
+                    <th class="price2">價格</th>
+                    <th class="price2">冰</th>
+                    <th class="price2">熱</th>
                 </tr>
                 <tr>
-                    <td>紅玉紅茶</td>
-                    <td>120</td>
-                    <td>O</td>
-                    <td>O</td>
+                    <td class="product">紅玉紅茶</td>
+                    <td class="textmid">120</td>
+                    <td class="textmid">O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>牛蒡黑豆茶</td>
-                    <td>90</td>
+                    <td class="product">牛蒡黑豆茶</td>
+                    <td class="textmid">90</td>
                     <td></td>
-                    <td>O</td>
+                    <td class="textmid">O</td>
                 </tr>
                 <tr>
-                    <td>玫瑰花茶</td>
-                    <td>110</td>
+                    <td class="product">玫瑰花茶</td>
+                    <td class="textmid">110</td>
                     <td></td>
-                    <td>O</td>
+                    <td class="textmid">O</td>
                 </tr>
             </table>
         </div>
 
         <!-- 需預訂商品 -->
-        <h1>需預訂商品</h1>
-
-        <div class="price-unit">價格單位: NTD</div>
+        
 
         <!-- menu2 -->
         <div class="menu2">
 
+            <div class="menu-title">
+                <h1>需預訂商品</h1></div>
+    
+            <div class="price-unit">價格單位: NTD</div>
+
+
             <!-- 預購1 -->
             <table>
                 <tr class="field">
-                    <th></th>
-                    <th>價格</th>
+                    <th class="left-field"></th>
+                    <th class="price3">價格</th>
                 </tr>
                 <tr>
-                    <td>愛爾蘭奶酒慕斯蛋糕(6吋)</td>
-                    <td>680/個</td>
+                    <td class="product">愛爾蘭奶酒慕斯蛋糕(6吋)</td>
+                    <td class="textmid">680/個</td>
                 </tr>
                 <tr>
-                    <td>戚風蛋糕(8吋)</td>
-                    <td>650/個</td>
+                    <td class="product">戚風蛋糕(8吋)</td>
+                    <td class="textmid">650/個</td>
                 </tr>
                 <tr>
-                    <td>戚風蛋糕(6吋)</td>
-                    <td>350/個</td>
+                    <td class="product">戚風蛋糕(6吋)</td>
+                    <td class="textmid">350/個</td>
                 </tr>
                 <tr>
-                    <td>老奶奶檸檬蛋糕(6吋)</td>
-                    <td>450/個</td>
+                    <td class="product">老奶奶檸檬蛋糕(6吋)</td>
+                    <td class="textmid">450/個</td>
                 </tr>
                 <tr>
-                    <td>原味巴斯克蛋糕</td>
-                    <td>450/個</td>
+                    <td class="product">原味巴斯克蛋糕</td>
+                    <td class="textmid">450/個</td>
                 </tr>
                 <tr>
-                    <td>蜜紅豆巴斯克蛋糕</td>
-                    <td>520/個</td>
+                    <td class="product">蜜紅豆巴斯克蛋糕</td>
+                    <td class="textmid">520/個</td>
                 </tr>
                 <tr>
-                    <td>抹茶蜜紅豆巴斯克蛋糕</td>
-                    <td>580/個</td>
+                    <td class="product">抹茶蜜紅豆巴斯克蛋糕</td>
+                    <td class="textmid">580/個</td>
                 </tr>
                 <tr>
-                    <td>三層(香橙/抹茶)慕斯蛋糕(6吋)</td>
-                    <td>520/個</td>
+                    <td class="product smalltext">三層(香橙/抹茶)慕斯蛋糕(6吋)</td>
+                    <td class="textmid">520/個</td>
                 </tr>
             </table>
 
             <!-- 預購2 -->
             <table>
                 <tr class="field">
-                    <th></th>
-                    <th>價格</th>
+                    <th class="left-field"></th>
+                    <th class="price3">價格</th>
                 </tr>
                 <tr>
-                    <td>濃醇巧克力蛋糕(6吋)</td>
-                    <td>450/個</td>
+                    <td class="product">濃醇巧克力蛋糕(6吋)</td>
+                    <td class="textmid">450/個</td>
                 </tr>
                 <tr>
-                    <td>(抹茶/紅茶)巧克力蛋糕(6吋)</td>
-                    <td>450/個</td>
+                    <td class="product">(抹茶/紅茶)巧克力蛋糕(6吋)</td>
+                    <td class="textmid">450/個</td>
                 </tr>
                 <tr>
-                    <td>重乳酪蛋糕(6吋)</td>
-                    <td>590/個</td>
+                    <td class="product">重乳酪蛋糕(6吋)</td>
+                    <td class="textmid">590/個</td>
                 </tr>
                 <tr>
-                    <td>天然酵母香橙磅蛋糕</td>
-                    <td>510/條</td>
+                    <td class="product">天然酵母香橙磅蛋糕</td>
+                    <td class="textmid">510/條</td>
                 </tr>
                 <tr>
-                    <td>檸檬塔禮盒(8入)</td>
-                    <td>640/盒</td>
+                    <td class="product">檸檬塔禮盒(8入)</td>
+                    <td class="textmid">640/盒</td>
                 </tr>
                 <tr>
-                    <td>玫瑰蘋果塔禮盒</td>
-                    <td>880/盒</td>
+                    <td class="product">玫瑰蘋果塔禮盒</td>
+                    <td class="textmid">880/盒</td>
                 </tr>
                 <tr>
-                    <td>玫瑰蘋果塔</td>
-                    <td>220/2入</td>
+                    <td class="product">玫瑰蘋果塔</td>
+                    <td class="textmid">220/2入</td>
                 </tr>
                 <tr>
-                    <td>義式硬布丁禮盒(4入)</td>
-                    <td>260/盒</td>
+                    <td class="product">義式硬布丁禮盒(4入)</td>
+                    <td class="textmid">260/盒</td>
                 </tr>
             </table>
 
             <!-- 預購3 -->
             <table>
                 <tr class="field">
-                    <th></th>
-                    <th>價格</th>
+                    <th class="left-field"></th>
+                    <th class="price3">價格</th>
                 </tr>
                 <tr>
-                    <td>雪Q餅袋裝</td>
-                    <td>230/包</td>
+                    <td class="product">雪Q餅袋裝</td>
+                    <td class="textmid">230/包</td>
                 </tr>
                 <tr>
-                    <td>雪Q餅禮盒</td>
-                    <td>330/盒</td>
+                    <td class="product">雪Q餅禮盒</td>
+                    <td class="textmid">330/盒</td>
                 </tr>
                 <tr>
-                    <td>手工餅乾禮盒</td>
-                    <td>390/盒</td>
+                    <td class="product">手工餅乾禮盒</td>
+                    <td class="textmid">390/盒</td>
                 </tr>
                 <tr>
-                    <td>手工餅乾鐵盒</td>
-                    <td>200/盒</td>
+                    <td class="product">手工餅乾鐵盒</td>
+                    <td class="textmid">200/盒</td>
                 </tr>
                 <tr>
-                    <td>原味奶酪</td>
-                    <td>300/6入</td>
+                    <td class="product">原味奶酪</td>
+                    <td class="textmid">300/6入</td>
                 </tr>
             </table>
+
+            <!-- notice -->
+            <div>
+                <div class="notice">*預購商品請至<a href="">聯絡我們</a></div>
+                <p class="notice">*預定商品須自行到店取貨</p>
+                <p class="notice">*外縣市可寄送，運費另外計算</p>
+            </div>
+
         </div>
+
+<!-- 菜單下載 -->
+<div class="menu-download"><a href="">菜單下載</a></div>
+
+
 
         <!-- footer -->
         <footer>
