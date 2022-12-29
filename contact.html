@@ -102,7 +102,8 @@
 
         /* contact */
 
-        .contact-title-block {
+        /* 手機板聯絡我們標題 */
+        .contact-title-block1 {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -110,6 +111,11 @@
             margin-bottom: 46px;
             align-items: center;
 
+        }
+
+        /* 平板以上的聯絡我們標題 */
+        .contact-title-block2 {
+            display: none;
         }
 
         .coffee-bean {
@@ -137,12 +143,20 @@
         }
 
         .title {
+            display: flex;
             width: 100px;
             text-align: end;
             padding: 15px;
             font-size: 16px;
             line-height: 19px;
         }
+
+        .spacebet {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
 
         .content {
             padding: 15px;
@@ -151,6 +165,13 @@
         }
 
 
+
+
+        /* store */
+        .store-block {
+            display: flex;
+            justify-content: center;
+        }
 
 
         /* maps */
@@ -175,10 +196,20 @@
             background-position: center center;
         }
 
-        .map {
-            width: 340px;
-            height: 142px;
+        .map1 {}
+
+        .map2 {
+            display: none;
         }
+
+        .map3 {
+            display: none;
+        }
+
+        .map4 {
+            display: none;
+        }
+
 
         /* footer */
 
@@ -270,6 +301,76 @@
             .banner-cover {
                 height: 570px;
             }
+
+            /* contact */
+            .contact-title-block2 {
+                display: block;
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+
+            }
+
+            .contact-title2 {
+                width: 480px;
+                display: flex;
+                justify-content: center;
+                border-bottom: 2px dotted black;
+            }
+
+            .contact-title-block2 img {
+                padding-bottom: 15px;
+            }
+
+            .contact-title-block2 .contact-word {
+                font-size: 36px;
+                line-height: 50px;
+                padding: 0 20px;
+                letter-spacing: 9px;
+                padding-bottom: 15px;
+            }
+
+            .contact-title-block1 {
+                display: none;
+            }
+
+
+            .contact-box {
+                padding: 0 150px;
+            }
+
+            .topborder {
+                border-top: none;
+            }
+
+
+            /* store */
+            .store {
+                width: 485px;
+                margin-top: 60px;
+                margin-bottom: 50px;
+            }
+
+
+
+            /* map */
+
+            .map1 {
+                display: none;
+            }
+
+            .map2 {
+                display: block;
+            }
+
+            .map3 {
+                display: none;
+            }
+
+            .map4 {
+                display: none;
+            }
+
 
             /* footer */
             footer {
@@ -382,6 +483,64 @@
                 justify-content: space-between;
             }
 
+            /* contact */
+
+            .contact-title-block2 {
+                margin-top: 60px;
+            }
+
+            .contact-block {
+                width: 508px;
+            }
+
+            .store-contact {
+
+                margin-top: 80px;
+
+                display: flex;
+                justify-content: center;
+            }
+
+            .store {
+                margin: 0;
+            }
+
+            .contact-box {
+                padding: 0;
+                padding-left: 80px;
+            }
+
+            .title {
+                width: 116px;
+                padding: 15px;
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+            .content {
+                padding: 15px;
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+
+            /*map  */
+
+            .map1 {
+                display: none;
+            }
+
+            .map2 {
+                display: none;
+            }
+
+            .map3 {
+                display: block;
+            }
+
+            .map4 {
+                display: none;
+            }
 
             /* footer */
             .guitarist {
@@ -428,6 +587,37 @@
                 margin: 0px 45px;
             }
 
+
+            /* contact */
+            .contact-title-block2 {
+                margin-top: 50px;
+            }
+
+            .store-contact {
+
+                margin-top: 60px;
+            }
+
+
+            /* map */
+            .map1 {
+                display: none;
+            }
+
+            .map2 {
+                display: none;
+            }
+
+            .map3 {
+                display: none;
+            }
+
+            .map4 {
+                display: block;
+            }
+
+
+
             /* footer */
             .guitarist {
                 margin-right: 85px;
@@ -470,45 +660,105 @@
             </div>
         </div>
 
-        <!-- 店內照片輪播 -->
-        <div class="store"></div>
 
-
-
-
-        <!-- contact -->
-        <div class="contact-title-block">
-            <img class="coffee-bean" src="./img/test-coffee-bean.png" alt="">
-            <div class="contact-title">聯絡我們</div>
-
+        <div class="contact-title-block2">
+            <div class="contact-title2">
+                <img src="./img/coffee-bean-left-768.png" alt="">
+                <div class="contact-word">聯絡我們</div>
+                <img src="./img/coffee-bean-right-768.png" alt="">
+            </div>
         </div>
 
-        <div class="contact-block topborder">
-            <div class="title">地&ensp;&ensp;&ensp;&ensp;址:</div>
-            <div class="content">710台南市永康區國光五街34號</div>
-        </div>
-        <div class="contact-block">
-            <div class="title">電&ensp;&ensp;&ensp;&ensp;話:</div>
-            <div class="content">06 273 1699</div>
-        </div>
-        <div class="contact-block">
-            <div class="title">營業時間:</div>
-            <div class="content">星期二~日( 11:00–18:00)</div>
-        </div>
-        <div class="contact-block ">
-            <div class="title">休&ensp;息&ensp;日:</div>
-            <div class="content">星期一</div>
-        </div>
 
+
+        <div class="store-contact">
+            <!-- store -->
+            <!-- 店內照片輪播 -->
+            <div class="store-block">
+                <div class="store"></div>
+            </div>
+
+
+            <!-- contact -->
+            <div class="contact-title-block1">
+                <img class="coffee-bean" src="./img/test-coffee-bean.png" alt="">
+                <div class="contact-title">聯絡我們</div>
+
+            </div>
+
+            <div class="contact-box">
+                <div class="contact-block topborder">
+                    <div class="title">
+                        <div class="spacebet">
+                            <span>地</span>
+                            <span>址</span>
+                        </div>
+                        <span>:</span>
+                    </div>
+                    <div class="content">710台南市永康區國光五街34號</div>
+                </div>
+                <div class="contact-block">
+                    <div class="title">
+                        <div class="spacebet">
+                            <span>電</span>
+                            <span>話</span>
+                        </div>
+                        <span>:</span>
+                    </div>
+                    <div class="content">06 273 1699</div>
+                </div>
+                <div class="contact-block">
+                    <div class="title">
+                        <div class="spacebet">
+                            <span>營</span>
+                            <span>業</span>
+                            <span>時</span>
+                            <span>間</span>
+                        </div>
+                        <span>:</span>
+                    </div>
+                    <div class="content">星期二~日( 11:00–18:00)</div>
+                </div>
+                <div class="contact-block ">
+                    <div class="title">
+                        <div class="spacebet">
+                            <span>休</span>
+                            <span>息</span>
+                            <span>日</span>
+                        </div>
+                        <span>:</span>
+                    </div>
+                    <div class="content">星期一</div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- maps -->
         <div class="contact">
 
-            <div class="map">
+            <div class="map1">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4967234183773!2d120.25802311496746!3d23.005527184961696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e712f2b52b927%3A0xf4c4468313d37d62!2z5oGG5b-X55qE5bqX!5e0!3m2!1szh-TW!2stw!4v1672119372323!5m2!1szh-TW!2stw"
                     width="340" height="142" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map2">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4967234183773!2d120.25802311496746!3d23.005527184961696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e712f2b52b927%3A0xf4c4468313d37d62!2z5oGG5b-X55qE5bqX!5e0!3m2!1szh-TW!2stw!4v1672119372323!5m2!1szh-TW!2stw"
+                    width="485" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map3">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4967234183773!2d120.25802311496746!3d23.005527184961696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e712f2b52b927%3A0xf4c4468313d37d62!2z5oGG5b-X55qE5bqX!5e0!3m2!1szh-TW!2stw!4v1672119372323!5m2!1szh-TW!2stw"
+                    width="1073" height="467" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map4">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4967234183773!2d120.25802311496746!3d23.005527184961696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e712f2b52b927%3A0xf4c4468313d37d62!2z5oGG5b-X55qE5bqX!5e0!3m2!1szh-TW!2stw!4v1672119372323!5m2!1szh-TW!2stw"
+                    width="1070" height="467" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
