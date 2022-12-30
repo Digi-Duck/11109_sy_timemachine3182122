@@ -332,6 +332,61 @@
                 height: 570px;
             }
 
+            /* menu */
+            table {
+                width: 352px;
+                /* height: 260px; */
+            }
+
+.table-mar{
+    margin-right: 16px;
+}
+
+            .price-unit-block {
+                display: flex;
+                justify-content: center;
+            }
+
+            .price-unit {
+                width: 720px;
+
+            }
+
+            .pad1 {
+                display: flex;
+                justify-content: center;
+            }
+
+            .pad2 {
+                float: left;
+                margin-right: 16px;
+                margin-left: calc((100vw - 750px)/ 2);
+            }
+
+
+            .pad3 {
+                display: flex;
+                justify-content: center;
+            }
+
+            .pad4 {
+                display: flex;
+                justify-content: center;
+            }
+
+
+            .pad5 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .notice-block {
+                width: 352px;
+            }
+
+
+
             /* footer */
             footer {
                 height: 393px;
@@ -444,15 +499,19 @@
             }
 
 
-/* menu */
-.table-768{
-    width: 352px;
-    height: 260px;
+            /* menu */
+
+.small-desktop1{
+display: flex;
+justify-content: center;
 }
 
-.pad1{
-    display: flex;
-}
+.pad2 {
+                
+                margin: 0;
+            }
+
+
 
 
 
@@ -555,12 +614,14 @@
                 <h1>商品介紹</h1>
             </div>
 
-            <div class="price-unit">價格單位: NTD</div>
+            <div class="price-unit-block">
+                <div class="price-unit">價格單位: NTD</div>
+            </div>
 
-            <div>
+            <div class="small-desktop1">
                 <div class="pad1">
                     <!-- cakes -->
-                    <table>
+                    <table class="table-mar">
                         <tr class="field">
                             <th class="left-field title">戚風蛋糕</th>
                             <th class="price1">價格</th>
@@ -609,7 +670,7 @@
 
 
                 <!-- snacks -->
-                <table>
+                <table class="pad2">
                     <tr class="field">
                         <th class="left-field title">手作點心</th>
                         <th class="price1">價格</th>
@@ -638,7 +699,7 @@
 
             </div>
 
-            <div>
+            <div class="small-desktop1">
 
                 <!-- coffee -->
                 <table>
@@ -692,9 +753,9 @@
                     </tr>
                 </table>
 
-                <div>
+                <div class="pad3">
                     <!-- drinks -->
-                    <table>
+                    <table class="table-mar">
                         <tr class="field">
                             <th class="left-field1">飲品</th>
                             <th class="price2">價格</th>
@@ -768,123 +829,132 @@
                 <h1>需預訂商品</h1>
             </div>
 
-            <div class="price-unit">價格單位: NTD</div>
+            <div class="price-unit-block">
+                <div class="price-unit">價格單位: NTD</div>
+            </div>
 
 
             <!-- 預購1 -->
-            <table>
-                <tr class="field">
-                    <th class="left-field"></th>
-                    <th class="price3">價格</th>
-                </tr>
-                <tr>
-                    <td class="product">愛爾蘭奶酒慕斯蛋糕(6吋)</td>
-                    <td class="textmid">680/個</td>
-                </tr>
-                <tr>
-                    <td class="product">戚風蛋糕(8吋)</td>
-                    <td class="textmid">650/個</td>
-                </tr>
-                <tr>
-                    <td class="product">戚風蛋糕(6吋)</td>
-                    <td class="textmid">350/個</td>
-                </tr>
-                <tr>
-                    <td class="product">老奶奶檸檬蛋糕(6吋)</td>
-                    <td class="textmid">450/個</td>
-                </tr>
-                <tr>
-                    <td class="product">原味巴斯克蛋糕</td>
-                    <td class="textmid">450/個</td>
-                </tr>
-                <tr>
-                    <td class="product">蜜紅豆巴斯克蛋糕</td>
-                    <td class="textmid">520/個</td>
-                </tr>
-                <tr>
-                    <td class="product">抹茶蜜紅豆巴斯克蛋糕</td>
-                    <td class="textmid">580/個</td>
-                </tr>
-                <tr>
-                    <td class="product smalltext">三層(香橙/抹茶)慕斯蛋糕(6吋)</td>
-                    <td class="textmid">520/個</td>
-                </tr>
-            </table>
+            <div class="small-desktop1">
+                <div class="pad4">
+                    <table class="table-mar">
+                        <tr class="field">
+                            <th class="left-field"></th>
+                            <th class="price3">價格</th>
+                        </tr>
+                        <tr>
+                            <td class="product">愛爾蘭奶酒慕斯蛋糕(6吋)</td>
+                            <td class="textmid">680/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">戚風蛋糕(8吋)</td>
+                            <td class="textmid">650/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">戚風蛋糕(6吋)</td>
+                            <td class="textmid">350/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">老奶奶檸檬蛋糕(6吋)</td>
+                            <td class="textmid">450/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">原味巴斯克蛋糕</td>
+                            <td class="textmid">450/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">蜜紅豆巴斯克蛋糕</td>
+                            <td class="textmid">520/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">抹茶蜜紅豆巴斯克蛋糕</td>
+                            <td class="textmid">580/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product smalltext">三層(香橙/抹茶)慕斯蛋糕(6吋)</td>
+                            <td class="textmid">520/個</td>
+                        </tr>
+                    </table>
 
-            <!-- 預購2 -->
-            <table>
-                <tr class="field">
-                    <th class="left-field"></th>
-                    <th class="price3">價格</th>
-                </tr>
-                <tr>
-                    <td class="product">濃醇巧克力蛋糕(6吋)</td>
-                    <td class="textmid">450/個</td>
-                </tr>
-                <tr>
-                    <td class="product">(抹茶/紅茶)巧克力蛋糕(6吋)</td>
-                    <td class="textmid">450/個</td>
-                </tr>
-                <tr>
-                    <td class="product">重乳酪蛋糕(6吋)</td>
-                    <td class="textmid">590/個</td>
-                </tr>
-                <tr>
-                    <td class="product">天然酵母香橙磅蛋糕</td>
-                    <td class="textmid">510/條</td>
-                </tr>
-                <tr>
-                    <td class="product">檸檬塔禮盒(8入)</td>
-                    <td class="textmid">640/盒</td>
-                </tr>
-                <tr>
-                    <td class="product">玫瑰蘋果塔禮盒</td>
-                    <td class="textmid">880/盒</td>
-                </tr>
-                <tr>
-                    <td class="product">玫瑰蘋果塔</td>
-                    <td class="textmid">220/2入</td>
-                </tr>
-                <tr>
-                    <td class="product">義式硬布丁禮盒(4入)</td>
-                    <td class="textmid">260/盒</td>
-                </tr>
-            </table>
+                    <!-- 預購2 -->
+                    <table>
+                        <tr class="field">
+                            <th class="left-field"></th>
+                            <th class="price3">價格</th>
+                        </tr>
+                        <tr>
+                            <td class="product">濃醇巧克力蛋糕(6吋)</td>
+                            <td class="textmid">450/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">(抹茶/紅茶)巧克力蛋糕(6吋)</td>
+                            <td class="textmid">450/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">重乳酪蛋糕(6吋)</td>
+                            <td class="textmid">590/個</td>
+                        </tr>
+                        <tr>
+                            <td class="product">天然酵母香橙磅蛋糕</td>
+                            <td class="textmid">510/條</td>
+                        </tr>
+                        <tr>
+                            <td class="product">檸檬塔禮盒(8入)</td>
+                            <td class="textmid">640/盒</td>
+                        </tr>
+                        <tr>
+                            <td class="product">玫瑰蘋果塔禮盒</td>
+                            <td class="textmid">880/盒</td>
+                        </tr>
+                        <tr>
+                            <td class="product">玫瑰蘋果塔</td>
+                            <td class="textmid">220/2入</td>
+                        </tr>
+                        <tr>
+                            <td class="product">義式硬布丁禮盒(4入)</td>
+                            <td class="textmid">260/盒</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 預購3 -->
+                <div class="pad5">
+                    <table>
+                        <tr class="field">
+                            <th class="left-field"></th>
+                            <th class="price3">價格</th>
+                        </tr>
+                        <tr>
+                            <td class="product">雪Q餅袋裝</td>
+                            <td class="textmid">230/包</td>
+                        </tr>
+                        <tr>
+                            <td class="product">雪Q餅禮盒</td>
+                            <td class="textmid">330/盒</td>
+                        </tr>
+                        <tr>
+                            <td class="product">手工餅乾禮盒</td>
+                            <td class="textmid">390/盒</td>
+                        </tr>
+                        <tr>
+                            <td class="product">手工餅乾鐵盒</td>
+                            <td class="textmid">200/盒</td>
+                        </tr>
+                        <tr>
+                            <td class="product">原味奶酪</td>
+                            <td class="textmid">300/6入</td>
+                        </tr>
+                    </table>
+                    <!-- notice -->
+                    <div class="notice-block">
+                        <div class="notice">*預購商品請至<a href="">聯絡我們</a></div>
+                        <p class="notice">*預定商品須自行到店取貨</p>
+                        <p class="notice">*外縣市可寄送，運費另外計算</p>
+                    </div>
+                </div>
 
-            <!-- 預購3 -->
-            <table>
-                <tr class="field">
-                    <th class="left-field"></th>
-                    <th class="price3">價格</th>
-                </tr>
-                <tr>
-                    <td class="product">雪Q餅袋裝</td>
-                    <td class="textmid">230/包</td>
-                </tr>
-                <tr>
-                    <td class="product">雪Q餅禮盒</td>
-                    <td class="textmid">330/盒</td>
-                </tr>
-                <tr>
-                    <td class="product">手工餅乾禮盒</td>
-                    <td class="textmid">390/盒</td>
-                </tr>
-                <tr>
-                    <td class="product">手工餅乾鐵盒</td>
-                    <td class="textmid">200/盒</td>
-                </tr>
-                <tr>
-                    <td class="product">原味奶酪</td>
-                    <td class="textmid">300/6入</td>
-                </tr>
-            </table>
-
-            <!-- notice -->
-            <div>
-                <div class="notice">*預購商品請至<a href="">聯絡我們</a></div>
-                <p class="notice">*預定商品須自行到店取貨</p>
-                <p class="notice">*外縣市可寄送，運費另外計算</p>
             </div>
+
+
 
         </div>
 
