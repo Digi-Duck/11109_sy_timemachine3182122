@@ -107,6 +107,11 @@
             background-image: url(./img/bg-img/product-375.png);
             background-repeat: repeat;
             background-size: contain;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            color: #524B45;
         }
 
         ul {
@@ -115,6 +120,86 @@
 
         h2 {
             margin: 0px;
+            font-weight: 200;
+            margin: 0px 0px 10px 0px;
+        }
+
+        .route {
+            display: flex;
+            flex-direction: row;
+            line-height: 17px;
+            font-size: 17px;
+            width: auto;
+            height: 17px;
+            margin-top: 13px;
+            margin-bottom: 30px;
+        }
+
+        .pages {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .pages>div {
+            width: 240px;
+            height: 30px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .link-drinks-contain {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #524B45;
+        }
+
+        .block{
+            width: 375px;
+            height: 160px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #E8BF9E;
+            margin-bottom: 30px;
+        }
+        
+        .block>div {
+            width: 50%;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .block p {
+            margin: 0px;
+            color: #524B45;
+        }
+
+        .chi {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 100;
+            font-size: 36px;
+        }
+
+        .eng {
+            font-family: 'Zeyada', cursive;
+            font-size: 24px;
         }
 
         /* footer */
@@ -410,7 +495,11 @@
 
         <!-- introduce -->
         <div class="introduce-zone">
-            <div class="route"></div>
+            <div class="route">
+                <a href="">首頁</a>
+                >
+                <span>商品介紹</span>
+            </div>
             <div class="pages">
                 <h2>商品介紹</h2>
                 <div class="link-cake"><a href="">蛋糕</a></div>
@@ -424,27 +513,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="cake-block">
-                <div class="block-left">
-                    <h2 class="chi">蛋糕</h2>
-                    <h2 class="eng">cake</h2>
+            <a v-for="( image , index ) in blockBanner " :key=" index " class="block" href="">
+                <div>
+                    <p class="chi">{{image.name}}</p>
+                    <p class="eng">{{image.nameEng}}</p>
                 </div>
-                <div class="block-right"><img src="./img/introduce/戚風蛋糕.png" alt=""></div>
-            </div>
-            <div class="snacks-block">
-                <div class="block-left">
-                    <h2 class="chi">手做點心</h2>
-                    <h2 class="eng">Homemade-snack</h2>
-                </div>
-                <div class="block-right"><img src="./img/introduce/20953705_1198401686971942_8234353371634747719_n.png" alt=""></div>
-            </div>
-            <div class="drinks-block">
-                <div class="block-left">
-                    <h2 class="chi">飲品</h2>
-                    <h2 class="eng">drinks</h2>
-                </div>
-                <div class="block-right"><img src="./img/introduce/2.png" alt=""></div>
-            </div>
+                <div :style="{backgroundImage: 'url('+image.img+')'}"></div>
+            </a>
         </div>
 
         <!-- footer -->
@@ -486,6 +561,23 @@
                         {
                             img: './img/Banner/wooden-table-with-cup-coffee.jpg',
                         }
+                    ],
+                    blockBanner:[
+                        {
+                            img: "./img/introduce/戚風蛋糕.png",
+                            name: '蛋糕',
+                            nameEng: 'Cake',
+                        },
+                        {
+                            img: "./img/introduce/20953705_1198401686971942_8234353371634747719_n.png",
+                            name: '手作點心',
+                            nameEng: 'Homemade-snake',
+                        },
+                        {
+                            img: "./img/introduce/2.png",
+                            name: '飲品',
+                            nameEng: 'Drinks',
+                        },
                     ],
                 }
             },
