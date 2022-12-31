@@ -158,12 +158,51 @@
             display: none;
         }
 
+        .link-drinks {
+            position: relative;
+        }
+
+        .link-drinks>div {
+            position: absolute;
+            right: 10px;
+        }
+
+        .drinks-up {
+            display: none;
+        }
+
+        .drinks-down {
+            display: block;
+        }
+
+        .link-drinks:hover>.link-drinks-contain {
+            display: flex;
+            width: 100%;
+            height: 90px;
+            top: 15px;
+            position: absolute;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px;
+            background-color: #fff;
+            line-height: 30px;
+        }
+
+        .link-drinks:hover>.drinks-down {
+            display: none;
+        }
+
+        .link-drinks:hover>.drinks-up {
+            display: block;
+        }
+
         a {
             text-decoration: none;
             color: #524B45;
         }
 
-        .block{
+        .block {
             width: 375px;
             height: 160px;
             display: flex;
@@ -173,7 +212,7 @@
             background-color: #E8BF9E;
             margin-bottom: 30px;
         }
-        
+
         .block>div {
             width: 50%;
             height: 120px;
@@ -221,10 +260,22 @@
             height: 150px;
             background-image: url('./img/animation/Guitarist.png');
             background-size: cover;
+            background-color: unset;
+            border: 0px solid black;
             position: absolute;
             top: 0px;
             right: 0px;
             transform: translate(0%, -50%);
+        }
+
+        .note {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            transition-timing-function: linear;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
 
         .footer-left {
@@ -511,6 +562,8 @@
                         <li><a href="">養生飲品</a></li>
                         <li><a href="">飲品</a></li>
                     </ul>
+                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
+                    <div class="drinks-down"><i class="fa-solid fa-chevron-down"></i></div>
                 </div>
             </div>
             <a v-for="( image , index ) in blockBanner " :key=" index " class="block" href="">
@@ -524,7 +577,7 @@
 
         <!-- footer -->
         <footer>
-            <div class="guitarist"></div>
+            <button @click="sings()" type="button" class="guitarist"></button>
             <div class="footer-left">
                 <div class="footer-logo"></div>
                 <div class="footer-text">
@@ -562,7 +615,8 @@
                             img: './img/Banner/wooden-table-with-cup-coffee.jpg',
                         }
                     ],
-                    blockBanner:[
+                    // block's file in vue.
+                    blockBanner: [
                         {
                             img: "./img/introduce/戚風蛋糕.png",
                             name: '蛋糕',
@@ -579,10 +633,45 @@
                             nameEng: 'Drinks',
                         },
                     ],
+                    // footer's notes effects.
+                    notes: [
+                        'url(./img/animation/4.png)',
+                        'url(./img/animation/5.png)',
+                        'url(./img/animation/7.png)',
+                    ],
                 }
             },
-            method: {
+            methods: {
+                sings() {
+                    let noteSign = this.notes[Math.floor(Math.random() * 3)];
+                    let note = document.createElement('div');
+                    const footer = document.querySelector('footer');
+                    let remain = 3000;
+                    let x = -30;
+                    let y = 47;
+                    let o = 3000;
 
+                    note.classList.add('note');
+                    note.style.backgroundImage = noteSign;
+                    note.style.top = x + 'px';
+                    note.style.right = y + 'px';
+                    footer.appendChild(note);
+
+                    let trytrysee = window.setInterval(function () {
+                        remain -= 10;
+                        x += Math.floor(Math.random() * 2) * 2 - 1;
+                        y += 1;
+                        note.style.top = x + 'px';
+                        note.style.right = y + 'px';
+                        note.style.opacity = remain / o ;
+                        if (remain <= 0) {
+                            window.clearInterval(trytrysee);
+                        }
+                    }, 10);
+
+
+                    return;
+                },
             },
             mounted() {
                 // nav - banners
@@ -631,7 +720,6 @@
                         prevEl: ".swiper-button-prev",
                     },
                 });
-
             },
         }).mount('#app')
     </script>
