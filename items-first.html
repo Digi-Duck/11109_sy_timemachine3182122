@@ -642,6 +642,7 @@
                 }
             },
             methods: {
+                // guitarist sings
                 sings() {
                     let noteSign = this.notes[Math.floor(Math.random() * 3)];
                     let note = document.createElement('div');
@@ -650,21 +651,32 @@
                     let x = -30;
                     let y = 47;
                     let o = 3000;
+                    let count = 0 ;
+                    let way = Math.floor(Math.random() * 3) - 1 ;
 
                     note.classList.add('note');
                     note.style.backgroundImage = noteSign;
                     note.style.top = x + 'px';
                     note.style.right = y + 'px';
                     footer.appendChild(note);
-
+    
                     let trytrysee = window.setInterval(function () {
                         remain -= 10;
-                        x += Math.floor(Math.random() * 2) * 2 - 1;
+                        count += 1;
+
+                        if ( count == 20 ) {
+                            way = Math.floor(Math.random() * 3) - 1 ;
+                            count = 0 ;
+                        }
+                        
+                        x += way;
                         y += 1;
                         note.style.top = x + 'px';
                         note.style.right = y + 'px';
                         note.style.opacity = remain / o ;
                         if (remain <= 0) {
+                            footer.removeChild(note);
+                            note = '';
                             window.clearInterval(trytrysee);
                         }
                     }, 10);
