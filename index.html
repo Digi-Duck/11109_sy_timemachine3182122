@@ -271,6 +271,10 @@
             margin-bottom: 3px;
         }
 
+        .letter-768 {
+            display: none;
+        }
+
         /* card-zone */
 
         .card-zone {
@@ -329,7 +333,23 @@
             font-family: 'Noto Sans TC', sans-serif;
         }
 
+        .icon-right {
+            display: none;
+            width: 54px;
+            height: 53px;
+            background-image: url('./img/test-splatoon-1.png');
+            background-repeat: contain;
+            background-size: auto;
+        }
+
         .dotted-line {
+            width: 100%;
+            line-height: 19px;
+            letter-spacing: 0.38em;
+        }
+
+        .dotted-line-768 {
+            display: none;
             width: 100%;
             line-height: 19px;
             letter-spacing: 0.38em;
@@ -343,6 +363,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         }
 
         .card-pic {
@@ -364,6 +385,7 @@
             letter-spacing: 0.33em;
         }
 
+        /* news */
         .news-zone {
             width: 100vw;
             height: auto;
@@ -371,8 +393,9 @@
             background-repeat: repeat;
             background-size: auto;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
             align-items: center;
             padding-top: 34px;
             padding-left: 44px;
@@ -416,6 +439,70 @@
             .banner-cover {
                 height: 570px;
             }
+
+            /* letter */
+            .letter {
+                width: 482px;
+                height: 540px;
+            }
+
+            .letter>h2 {
+                margin: 30px 0px;
+            }
+
+            .letter-375 {
+                display: none;
+            }
+
+            .letter-768 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .letter-768>div {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+
+            .letter * {
+                font-size: 18px;
+                line-height: 36px;
+                letter-spacing: 0.21em;
+            }
+
+            /* cards */
+            .card-zone {
+                height: 1100px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .card-zone>* {
+                margin: 20px;
+            }
+
+            .title {
+                width: 514px;
+            }
+
+            .dotted-line {
+                display: none;
+            }
+
+            .dotted-line-768 {
+                display: flex;
+            }
+
+            .icon-right {
+                display: flex;
+            }
+
+            /* news */
 
             /* footer */
             footer {
@@ -632,22 +719,39 @@
         <div class="letter-zone">
             <div class="letter">
                 <h2>恆志的店</h2>
-                <div>
-                    <p>是一個夢想，</p>
-                    <p>想創作出一個友善空間，</p>
-                    <p>讓朋友，同學及所有人</p>
-                    <p>能夠自由自在聊天，</p>
-                    <p>聚會的空間，一個無壓力，</p>
-                    <p>放鬆心情品嚐咖啡，</p>
-                    <p>甜點的下午茶店。</p>
+                <div class="letter-375">
+                    <div>
+                        <p>是一個夢想，</p>
+                        <p>想創作出一個友善空間，</p>
+                        <p>讓朋友，同學及所有人</p>
+                        <p>能夠自由自在聊天，</p>
+                        <p>聚會的空間，一個無壓力，</p>
+                        <p>放鬆心情品嚐咖啡，</p>
+                        <p>甜點的下午茶店。</p>
+                    </div>
+                    <div>
+                        <p>友善甜點是我們開店的初衷。</p>
+                        <p>所有的甜點無化學添加物，</p>
+                        <p>蛋糕無添加泡打粉，無香精、</p>
+                        <p>香料，就是希望大家來店</p>
+                        <p>都能吃到無負擔的甜點，</p>
+                        <p>吃到美味享受一下午的開心。</p>
+                    </div>
                 </div>
-                <div>
-                    <p>友善甜點是我們開店的初衷。</p>
-                    <p>所有的甜點無化學添加物，</p>
-                    <p>蛋糕無添加泡打粉，無香精、</p>
-                    <p>香料，就是希望大家來店</p>
-                    <p>都能吃到無負擔的甜點，</p>
-                    <p>吃到美味享受一下午的開心。</p>
+                <div class="letter-768">
+                    <div>
+                        <p>是一個夢想，想創作出一個友善空間，</p>
+                        <p>讓朋友，同學及所有人能夠自由自在聊天，</p>
+                        <p>聚會的空間，一個無壓力，</p>
+                        <p>放鬆心情品嚐咖啡，甜點的下午茶店。</p>
+                    </div>
+                    <div>
+                        <p>友善甜點是我們開店的初衷。</p>
+                        <p>所有的甜點無化學添加物，</p>
+                        <p>蛋糕無添加泡打粉，無香精、</p>
+                        <p>香料，就是希望大家來店都能吃到無負</p>
+                        <p>擔的甜點，吃到美味享受一下午的開心。</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -658,8 +762,10 @@
                 <div class="title-up">
                     <div class="icon"></div>
                     <div class="title-text">為您推薦</div>
+                    <div class="icon-right"></div>
                 </div>
                 <div class="dotted-line">.....................................</div>
+                <div class="dotted-line-768">.............................................................</div>
             </div>
             <div v-for=" ( select , index )  in cards" :key="index" class="card">
                 <div class="card-pic" :style="{backgroundImage: 'url('+select.pic+')'}"></div>
@@ -673,14 +779,16 @@
             <div class="title">
                 <div class="title-up">
                     <div class="icon"></div>
-                    <div class="title-text">為您推薦</div>
+                    <div class="title-text">最新消息</div>
+                    <div class="icon-right"></div>
                 </div>
                 <div class="dotted-line">.....................................</div>
+                <div class="dotted-line-768">.............................................................</div>
             </div>
             <div class="fb-zone">
                 <div class="fb-page" data-href="https://www.facebook.com/fireacestore/" data-tabs="timeline"
-                    data-width="340" data-height="443" data-small-header="true" data-adapt-container-width="true"
-                    data-hide-cover="false" data-show-facepile="false">
+                    data-width="340" data-height="443" data-small-header="true" data-adapt-container-width="false"
+                    data-hide-cover="false" data-show-facepile="false" data-lazy="false">
                     <blockquote cite="https://www.facebook.com/fireacestore/" class="fb-xfbml-parse-ignore"><a
                             href="https://www.facebook.com/fireacestore/">恆志的店</a></blockquote>
                 </div>
@@ -830,14 +938,14 @@
                             pic: './img/hz-img/香橙慕斯蛋糕.jpg'
                         },
                         {
-                            name: '飲品',
-                            nameEng: 'Drinks',
-                            pic: './img/hz-img/c.jpg'
-                        },
-                        {
                             name: '手作點心',
                             nameEng: 'Homemade Snack',
                             pic: './img/hz-img/sp.jpg'
+                        },
+                        {
+                            name: '飲品',
+                            nameEng: 'Drinks',
+                            pic: './img/hz-img/c.jpg'
                         },
                     ],
                 }
