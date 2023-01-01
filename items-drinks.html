@@ -100,6 +100,144 @@
             opacity: 1;
         }
 
+
+        /* items-zone */
+        .items-zone {
+            width: 100%;
+            height: 690px;
+            background-image: url(./img/bg-img/product-375.png);
+            background-repeat: repeat;
+            background-size: contain;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            color: #524B45;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h2 {
+            margin: 0px;
+            font-weight: 200;
+            margin: 0px 0px 10px 0px;
+        }
+
+        .route {
+            display: flex;
+            flex-direction: row;
+            line-height: 17px;
+            font-size: 17px;
+            width: auto;
+            height: 17px;
+            margin-top: 13px;
+            margin-bottom: 30px;
+        }
+
+        .pages {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .pages>div {
+            width: 240px;
+            height: 30px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .link-drinks-contain {
+            display: none;
+        }
+
+        .link-drinks {
+            position: relative;
+        }
+
+        .link-drinks>div {
+            position: absolute;
+            right: 10px;
+        }
+
+        .drinks-up {
+            display: none;
+        }
+
+        .drinks-down {
+            display: block;
+        }
+
+        .link-drinks:hover>.link-drinks-contain {
+            display: flex;
+            width: 100%;
+            height: 90px;
+            top: 15px;
+            position: absolute;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px;
+            background-color: #fff;
+            line-height: 30px;
+        }
+
+        .link-drinks:hover>.drinks-down {
+            display: none;
+        }
+
+        .link-drinks:hover>.drinks-up {
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #524B45;
+        }
+
+        .swiper-zone {
+            width: 375px;
+            height: 400px;
+        }
+
+        .swiper {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border: 1px solid black;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        .swiper-button-next {
+            display: none;
+        }
+
+        .swiper-button-prev {
+            display: none;
+        }
+
+        .swiper-pagination {
+            display: none;
+        }
+
         /* footer */
         footer {
             width: 100%;
@@ -389,22 +527,46 @@
             </div>
         </div>
 
-        <!-- swiper zone -->
-        <div class="swiper-zone">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide"><i class="fa-solid fa-bars"></i></div>
+        <!-- pages -->
+        <div class="items-zone">
+            <div class="route">
+                <a href="">首頁</a>
+                >
+                <span>商品介紹</span>
+            </div>
+            <div class="pages">
+                <h2>商品介紹</h2>
+                <div class="link-cake"><a href="">蛋糕</a></div>
+                <div class="link-snacks"><a href="">手做點心</a></div>
+                <div class="link-drinks">
+                    飲品
+                    <ul class="link-drinks-contain">
+                        <li><a href="">咖啡</a></li>
+                        <li><a href="">養生飲品</a></li>
+                        <li><a href="">飲品</a></li>
+                    </ul>
+                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
+                    <div class="drinks-down"><i class="fa-solid fa-chevron-down"></i></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+            </div>
+            <!-- swiper zone -->
+            <div class="swiper-zone">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide"><i class="fa-solid fa-bars"></i></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
+
         <!-- footer -->
         <footer>
             <div class="guitarist"></div>
@@ -482,7 +644,7 @@
                     loop: true,
                     slidesPerView: "auto",
                     coverflowEffect: {
-                        rotate: -20,
+                        rotate: 0,
                         stretch: 0,
                         depth: 200,
                         modifier: 1,
