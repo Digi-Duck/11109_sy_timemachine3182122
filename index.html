@@ -240,6 +240,11 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            position: relative;
+        }
+
+        .letter-pic {
+            display: none;
         }
 
         .letter {
@@ -475,11 +480,12 @@
 
             /* cards */
             .card-zone {
-                height: 1100px;
+                height: auto;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: flex-start;
+                padding-bottom: 95px;
             }
 
             .card-zone>* {
@@ -487,6 +493,10 @@
             }
 
             .title {
+                width: 100%;
+            }
+
+            .title-up {
                 width: 514px;
             }
 
@@ -496,6 +506,8 @@
 
             .dotted-line-768 {
                 display: flex;
+                flex-direction: row;
+                justify-content: center;
             }
 
             .icon-right {
@@ -503,6 +515,9 @@
             }
 
             /* news */
+            .news-zone {
+                justify-content: space-evenly;
+            }
 
             /* footer */
             footer {
@@ -615,6 +630,55 @@
                 justify-content: space-between;
             }
 
+            .banner-zone {
+                height: 937px;
+            }
+
+            .banner-cover {
+                height: 937px;
+            }
+
+            /* letter's zone */
+            .letter-zone {
+                height: 940px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+            }
+
+            .letter-pic {
+                display: block;
+                position: absolute;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 100%;
+            }
+
+            .pic1 {
+                width: 450px;
+                height: 450px;
+                top: 116px;
+                left: 32px;
+                background-image: url('./img/test-splatoon-1.png');
+            }
+
+            .pic2 {
+                width: 320px;
+                height: 320px;
+                top: 466px;
+                right: 560px;
+                background-image: url('./img/test-splatoon-2.webp');
+            }
+
+            /* card's zone */
+            .card-zone>* {
+                margin: 25px;
+            }
+
+            .card-zone {
+                padding-bottom: 100px;
+            }
 
             /* footer */
             .guitarist {
@@ -717,6 +781,8 @@
 
         <!-- Dad's letter -->
         <div class="letter-zone">
+            <div class="letter-pic pic1"></div>
+            <div class="letter-pic pic2"></div>
             <div class="letter">
                 <h2>恆志的店</h2>
                 <div class="letter-375">
