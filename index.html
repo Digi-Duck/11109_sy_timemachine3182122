@@ -181,7 +181,6 @@
         }
 
         /* footer */
-
         footer {
             width: 100%;
             height: 316px;
@@ -200,10 +199,23 @@
             height: 150px;
             background-image: url('./img/animation/Guitarist.png');
             background-size: cover;
+            background-color: unset;
+            border: 0px solid black;
             position: absolute;
             top: 0px;
             right: 0px;
             transform: translate(0%, -50%);
+        }
+
+        .note {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            transition-timing-function: linear;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
         }
 
         .footer-left {
@@ -1012,7 +1024,7 @@
 
         <!-- footer -->
         <footer>
-            <div class="guitarist"></div>
+            <button @click="sings()" type="button" class="guitarist"></button>
             <div class="footer-left">
                 <div class="footer-logo"></div>
                 <div class="footer-text">
@@ -1068,10 +1080,67 @@
                             pic: './img/hz-img/c.jpg'
                         },
                     ],
+                    notes: [
+                        'url(./img/animation/4.png)',
+                        'url(./img/animation/5.png)',
+                        'url(./img/animation/7.png)',
+                    ],
                 }
             },
-            method: {
+            methods: {
+                // guitarist sings
+                sings() {
+                    let noteSign = this.notes[Math.floor(Math.random() * 3)];
+                    let note = document.createElement('div');
+                    const footer = document.querySelector('footer');
+                    let remain = 3000;
+                    let y = -30;
+                    let x = 47;
+                    let o = 3000;
+                    let count = 0;
+                    let way = Math.floor(Math.random() * 3) - 1;
 
+                    if (window.innerWidth < 768) {
+                        x = 47;
+                    }
+                    else if (window.innerWidth < 1280) {
+                        x = 47 + 31;
+                    }
+                    else {
+                        x = 47 + 81; 
+                    }
+
+                    note.classList.add('note');
+                    note.style.backgroundImage = noteSign;
+                    note.style.top = y + 'px';
+                    note.style.right = x + 'px';
+                    footer.appendChild(note);
+
+
+                    let trytrysee = window.setInterval(function () {
+                        remain -= 10;
+                        count += 1;
+
+                        if (count == 20) {
+                            way = Math.floor(Math.random() * 3) - 1;
+                            count = 0;
+                        }
+
+                        y += way;
+                        x += 1;
+                        note.style.top = y + 'px';
+                        note.style.right = x + 'px';
+                        note.style.opacity = remain / o;
+                        if (remain <= 0) {
+                            footer.removeChild(note);
+                            note = '';
+                            window.clearInterval(trytrysee);
+                        }
+                    }, 10);
+
+
+                    return;
+                },
             },
             mounted() {
                 // const doorBackground = document.querySelector('.door-background');
