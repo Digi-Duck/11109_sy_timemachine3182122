@@ -28,7 +28,7 @@
         }
 
         #app {
-            width: 100vw;
+            width: 100%;
             height: auto;
             position: relative;
         }
@@ -45,7 +45,7 @@
         }
 
         .main-effect {
-            width: 100vw;
+            width: 100%;
             height: 130vh;
             background-image: url('./img/guitar-hero.png');
             background-size: contain;
@@ -55,7 +55,7 @@
         }
 
         .pass {
-            width: 50vw;
+            width: 100%;
             height: 100vh;
         }
 
@@ -71,7 +71,7 @@
         }
 
         .door {
-            width: 100vw;
+            width: 100%;
             height: auto;
             clip-path: ellipse(25% 75% at 50% 100%);
             scale: 1;
@@ -81,7 +81,7 @@
 
         .store {
             background-image: url('./img/store.jpg');
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             left: 0px;
             scale: 1.1;
@@ -108,7 +108,7 @@
         }
 
         .nav-burger{
-            padding-left: 55px;
+            padding-left: 23px;
         }
 
         .nav-bar {
@@ -134,14 +134,15 @@
             display: none;
             width: 100%;
             height: 100vh;
-            position: absolute;
             background-color: #fff;
             top: 0px;
             z-index: 4;
+            margin: 0px;
+            padding: 0px;
         }
 
         .nav-active {
-            display: block;
+            display: flex;
             position: fixed;
         }
 
@@ -264,7 +265,7 @@
         /* letter zone */
 
         .letter-zone {
-            width: 100vw;
+            width: 100%;
             height: 641px;
             padding: 30px;
             padding-bottom: 81px;
@@ -317,7 +318,7 @@
         /* card-zone */
 
         .card-zone {
-            width: 100vw;
+            width: 100%;
             height: 1384px;
             background-image: url('./img/bg-img/product-bg.jpg');
             background-repeat: repeat;
@@ -349,9 +350,9 @@
         .icon {
             width: 54px;
             height: 53px;
-            background-image: url('./img/test-splatoon-1.png');
-            background-repeat: contain;
-            background-size: auto;
+            background-image: url('./img/coffee-bean-left-768.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .title-up {
@@ -376,9 +377,9 @@
             display: none;
             width: 54px;
             height: 53px;
-            background-image: url('./img/test-splatoon-1.png');
-            background-repeat: contain;
-            background-size: auto;
+            background-image: url('./img/coffee-bean-right-768.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .dotted-line {
@@ -426,7 +427,7 @@
 
         /* news */
         .news-zone {
-            width: 100vw;
+            width: 100%;
             height: auto;
             background-image: url('./img/bg-img/background\ 3.png');
             background-repeat: repeat;
@@ -469,6 +470,10 @@
                 width: 112px;
                 height: 110px;
                 right: 25px;
+            }
+
+            .nav-burger {
+                padding-left: 55px;
             }
 
             .banner-zone {
@@ -1191,6 +1196,16 @@
                     }
 
                 });
+
+                //nav burger menu
+                let burger = document.querySelector('.nav-burger');
+                let navContent = document.querySelector('.nav-content');
+                let navBar = document.querySelector('.nav-bar');
+
+                burger.addEventListener('click', function () {
+                    navContent.classList.toggle('nav-active');
+                    navBar.classList.toggle('nav-active');
+                })
             },
         }).mount('#app')
     </script>

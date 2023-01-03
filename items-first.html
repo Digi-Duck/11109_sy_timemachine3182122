@@ -603,19 +603,19 @@
                     </div>
                 </div>
             </div>
-            <ul class="nav-content">
-                <li><a class="introduce" href="./items-first.html">商品介紹</a></li>
-                <li><a class="menu" href="./menu.html">飲食菜單</a></li>
-                <li><a class="contact" href="./contact.html">聯絡我們</a></li>
-                <li>
-                    <div class="nav-links">
-                        <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a class="instagram" href=""><i class="fa-brands fa-square-instagram"></i></a>
-                    </div>
-                </li>
-            </ul>
             <a href="./index.html"><img class="logo" src="./img/fireaceLogo.png" alt=""></a>
         </nav>
+        <ul class="nav-content">
+            <li><a class="introduce" href="./items-first.html">商品介紹</a></li>
+            <li><a class="menu" href="./menu.html">飲食菜單</a></li>
+            <li><a class="contact" href="./contact.html">聯絡我們</a></li>
+            <li>
+                <div class="nav-links">
+                    <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="instagram" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+            </li>
+        </ul>
         <div class="banner-zone">
             <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
                 <div class="banner-cover" :style="{backgroundImage: 'url('+image.img+')'}"></div>
