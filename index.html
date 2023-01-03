@@ -45,17 +45,18 @@
         }
 
         .main-effect {
-            width: 50vw;
-            height: 50vh;
+            width: 100vw;
+            height: 120vh;
             background-image: url('./img/guitar-hero.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            position: absolute;
         }
 
         .pass {
             width: 50vw;
-            height: 50vh;
+            height: 90vh;
         }
 
         .store-background {
@@ -641,14 +642,25 @@
             /* letter's zone */
             .letter-zone {
                 height: 940px;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: center;
-                align-items: flex-end;
+                align-items: center;
+            }
+
+            .letter {
+                width: 482px;
+            }
+
+            .letter-pic-zone {
+                display: flex;
+                width: 738px;
+                height: 600px;
+                flex-direction: row;
+                justify-content: flex-end;
             }
 
             .letter-pic {
                 display: block;
-                position: absolute;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -658,17 +670,16 @@
             .pic1 {
                 width: 450px;
                 height: 450px;
-                top: 116px;
-                left: 32px;
                 background-image: url('./img/test-splatoon-1.png');
+                align-self: flex-start;
             }
 
             .pic2 {
-                width: 320px;
-                height: 320px;
-                top: 466px;
-                right: 560px;
+                width: 300px;
+                height: 300px;
                 background-image: url('./img/test-splatoon-2.webp');
+                align-self: flex-end;
+                transform: translate(-20px,0%);
             }
 
             /* card's zone */
@@ -781,8 +792,10 @@
 
         <!-- Dad's letter -->
         <div class="letter-zone">
-            <div class="letter-pic pic1"></div>
-            <div class="letter-pic pic2"></div>
+            <div class="letter-pic-zone">
+                <div class="letter-pic pic1"></div>
+                <div class="letter-pic pic2"></div>
+            </div>
             <div class="letter">
                 <h2>恆志的店</h2>
                 <div class="letter-375">

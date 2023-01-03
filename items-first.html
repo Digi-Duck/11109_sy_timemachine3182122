@@ -35,9 +35,8 @@
         nav {
             width: 100%;
             height: 87px;
-            padding: 14px 0px;
             position: absolute;
-            z-index: 1;
+            z-index: 5;
         }
 
         .logo {
@@ -46,23 +45,41 @@
             height: 83px;
             top: 0px;
             right: 17px;
+            z-index: 6;
         }
 
         .nav-bar {
             width: 100%;
-            height: 100%;
+            height: calc(100% - 28px);
             background-color: #4E4441;
             opacity: 60%;
             padding: 16px 25px;
+            margin: 14px 0px;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
             color: white;
+            z-index: 6;
         }
 
-        .nav-bar>i {
+        .nav-bar i {
             font-size: 23px;
+        }
+
+        .nav-content {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background-color: #fff;
+            top: 0px;
+            z-index: 4;
+        }
+
+        .nav-active {
+            display: block;
+            position: fixed;
         }
 
         .nav-center {
@@ -369,7 +386,7 @@
                 justify-content: center;
             }
 
-            .block { 
+            .block {
                 width: 600px;
                 height: 300px;
                 margin-bottom: 60px;
@@ -558,22 +575,35 @@
         <!-- nav -->
         <nav>
             <div class="nav-bar">
-                <i class="fa-solid fa-bars"></i>
+                <div class="nav-burger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
                 <div class="nav-center">
                     <div class="nav-left">
-                        <div class="introduce">商品介紹</div>
-                        <div class="menu">飲食菜單</div>
+                        <a class="introduce" href="./items-first.html">商品介紹</a>
+                        <a class="menu" href="./menu.html">飲食菜單</a>
                     </div>
                     <div class="nav-right">
-                        <div class="contact">聯絡我們</div>
+                        <a class="contact" href="./contact.html">聯絡我們</a>
                         <div class="links">
-                            <div class="facebook"><i class="fa-brands fa-facebook-f"></i></div>
-                            <div class="instagram"><i class="fa-brands fa-square-instagram"></i></div>
+                            <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="instagram" href=""><i class="fa-brands fa-square-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <img class="logo" src="./img/fireaceLogo.png" alt="">
+            <ul class="nav-content">
+                <li><a class="introduce" href="./items-first.html">商品介紹</a></li>
+                <li><a class="menu" href="./menu.html">飲食菜單</a></li>
+                <li><a class="contact" href="./contact.html">聯絡我們</a></li>
+                <li>
+                    <div class="nav-links">
+                        <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="instagram" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <a href="./index.html"><img class="logo" src="./img/fireaceLogo.png" alt=""></a>
         </nav>
         <div class="banner-zone">
             <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
@@ -584,20 +614,20 @@
         <!-- introduce -->
         <div class="introduce-zone">
             <div class="route">
-                <a href="">首頁</a>
+                <a href="./index.html">首頁</a>
                 >
                 <span>商品介紹</span>
             </div>
             <div class="pages">
                 <h2>商品介紹</h2>
-                <div class="link-cake"><a href="">蛋糕</a></div>
-                <div class="link-snacks"><a href="">手做點心</a></div>
+                <div class="link-cake"><a href="./items-cake.html">蛋糕</a></div>
+                <div class="link-snacks"><a href="./items-snacks.html">手做點心</a></div>
                 <div class="link-drinks">
                     飲品
                     <ul class="link-drinks-contain">
-                        <li><a href="">咖啡</a></li>
-                        <li><a href="">養生飲品</a></li>
-                        <li><a href="">飲品</a></li>
+                        <li><a href="./items-drinks.html">咖啡</a></li>
+                        <li><a href="./items-drinks.html">養生飲品</a></li>
+                        <li><a href="./items-drinks.html">飲品</a></li>
                     </ul>
                     <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
                     <div class="drinks-down"><i class="fa-solid fa-chevron-down"></i></div>
@@ -616,7 +646,7 @@
         <footer>
             <button @click="sings()" type="button" class="guitarist"></button>
             <div class="footer-left">
-                <div class="footer-logo"></div>
+                <a class="footer-logo" href="./index.html"></a>
                 <div class="footer-text">
                     <p>電話:06- 273 1699</p>
                     <p>地址:台南市永康區國光五街34號</p>
@@ -685,32 +715,43 @@
                     let note = document.createElement('div');
                     const footer = document.querySelector('footer');
                     let remain = 3000;
-                    let x = -30;
-                    let y = 47;
+                    let y = -30;
+                    let x = 47;
                     let o = 3000;
-                    let count = 0 ;
-                    let way = Math.floor(Math.random() * 3) - 1 ;
+                    let count = 0;
+                    let way = Math.floor(Math.random() * 3) - 1;
+
+                    if (window.innerWidth < 768) {
+                        x = 47;
+                    }
+                    else if (window.innerWidth < 1280) {
+                        x = 47 + 31;
+                    }
+                    else {
+                        x = 47 + 81; 
+                    }
 
                     note.classList.add('note');
                     note.style.backgroundImage = noteSign;
-                    note.style.top = x + 'px';
-                    note.style.right = y + 'px';
+                    note.style.top = y + 'px';
+                    note.style.right = x + 'px';
                     footer.appendChild(note);
-    
+
+
                     let trytrysee = window.setInterval(function () {
                         remain -= 10;
                         count += 1;
 
-                        if ( count == 20 ) {
-                            way = Math.floor(Math.random() * 3) - 1 ;
-                            count = 0 ;
+                        if (count == 20) {
+                            way = Math.floor(Math.random() * 3) - 1;
+                            count = 0;
                         }
-                        
-                        x += way;
-                        y += 1;
-                        note.style.top = x + 'px';
-                        note.style.right = y + 'px';
-                        note.style.opacity = remain / o ;
+
+                        y += way;
+                        x += 1;
+                        note.style.top = y + 'px';
+                        note.style.right = x + 'px';
+                        note.style.opacity = remain / o;
                         if (remain <= 0) {
                             footer.removeChild(note);
                             note = '';
@@ -746,29 +787,15 @@
                     }
                 }), 5000);
 
-                // card - swiper
-                let swiper = new Swiper(".mySwiper", {
-                    effect: "coverflow",
-                    grabCursor: true,
-                    centeredSlides: true,
-                    loop: true,
-                    slidesPerView: "auto",
-                    coverflowEffect: {
-                        rotate: -20,
-                        stretch: 0,
-                        depth: 200,
-                        modifier: 1,
-                        slideShadows: false,
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                });
+                //nav burger menu
+                let burger = document.querySelector('.nav-burger');
+                let navContent = document.querySelector('.nav-content');
+                let navBar = document.querySelector('.nav-bar');
+
+                burger.addEventListener('click', function () {
+                    navContent.classList.toggle('nav-active');
+                    navBar.classList.toggle('nav-active');
+                })
             },
         }).mount('#app')
     </script>
