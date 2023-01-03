@@ -46,7 +46,7 @@
 
         .main-effect {
             width: 100vw;
-            height: 120vh;
+            height: 150vh;
             background-image: url('./img/guitar-hero.png');
             background-size: contain;
             background-position: center;
@@ -56,7 +56,7 @@
 
         .pass {
             width: 50vw;
-            height: 90vh;
+            height: 120vh;
         }
 
         .store-background {
@@ -94,9 +94,8 @@
         nav {
             width: 100%;
             height: 87px;
-            padding: 14px 0px;
             position: absolute;
-            z-index: 1;
+            z-index: 5;
         }
 
         .logo {
@@ -105,23 +104,45 @@
             height: 83px;
             top: 0px;
             right: 17px;
+            z-index: 6;
+        }
+
+        .nav-burger{
+            padding-left: 55px;
         }
 
         .nav-bar {
             width: 100%;
-            height: 100%;
+            height: calc(100% - 28px);
             background-color: #4E4441;
             opacity: 60%;
             padding: 16px 25px;
+            margin: 14px 0px;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
             color: white;
+            z-index: 6;
         }
 
-        .nav-bar>i {
+        .nav-bar i {
             font-size: 23px;
+        }
+
+        .nav-content {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background-color: #fff;
+            top: 0px;
+            z-index: 4;
+        }
+
+        .nav-active {
+            display: block;
+            position: fixed;
         }
 
         .nav-center {
@@ -586,7 +607,7 @@
                 transform: translate(50%);
             }
 
-            .nav-bar>i {
+            .nav-burger {
                 display: none;
             }
 
@@ -610,8 +631,10 @@
                 font-size: 20px;
             }
 
-            .nav-left>div {
+            .nav-left>a {
                 margin: 0px 30px;
+                width: 80px;
+                height: 24px;
             }
 
             .nav-right {
@@ -620,9 +643,14 @@
                 font-size: 20px;
             }
 
-            .nav-right>div {
+            .nav-right>* {
                 margin: 0px 30px;
                 width: 80px;
+            }
+
+            .nav-center a {
+                color: white;
+                text-decoration: none;
             }
 
             .links {
@@ -724,7 +752,7 @@
                 width: 340px;
             }
 
-            .nav-left>div {
+            .nav-left>a {
                 margin: 0px 45px;
             }
 
@@ -732,7 +760,7 @@
                 width: 340px;
             }
 
-            .nav-right>div {
+            .nav-right>* {
                 margin: 0px 45px;
             }
 
@@ -767,22 +795,35 @@
         <!-- nav -->
         <nav>
             <div class="nav-bar">
-                <i class="fa-solid fa-bars"></i>
+                <div class="nav-burger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
                 <div class="nav-center">
                     <div class="nav-left">
-                        <div class="introduce">商品介紹</div>
-                        <div class="menu">飲食菜單</div>
+                        <a class="introduce" href="./items-first.html">商品介紹</a>
+                        <a class="menu" href="./menu.html">飲食菜單</a>
                     </div>
                     <div class="nav-right">
-                        <div class="contact">聯絡我們</div>
+                        <a class="contact" href="./contact.html">聯絡我們</a>
                         <div class="links">
-                            <div class="facebook"><i class="fa-brands fa-facebook-f"></i></div>
-                            <div class="instagram"><i class="fa-brands fa-square-instagram"></i></div>
+                            <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="instagram" href=""><i class="fa-brands fa-square-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <img class="logo" src="./img/fireaceLogo.png" alt="">
+            <ul class="nav-content">
+                <li><a class="introduce" href="./items-first.html">商品介紹</a></li>
+                <li><a class="menu" href="./menu.html">飲食菜單</a></li>
+                <li><a class="contact" href="./contact.html">聯絡我們</a></li>
+                <li>
+                    <div class="nav-links">
+                        <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="instagram" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <a href="./index.html"><img class="logo" src="./img/fireaceLogo.png" alt=""></a>
         </nav>
         <div class="banner-zone">
             <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
