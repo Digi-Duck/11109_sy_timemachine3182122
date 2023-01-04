@@ -107,13 +107,13 @@
             z-index: 6;
         }
 
-        .nav-burger{
+        .nav-burger {
             padding-left: 23px;
         }
 
         .nav-bar {
             width: 100%;
-            height: calc(100% - 28px);
+            height: 59px;
             background-color: #4E4441;
             opacity: 60%;
             padding: 16px 25px;
@@ -134,11 +134,25 @@
             display: none;
             width: 100%;
             height: 100vh;
-            background-color: #fff;
-            top: 0px;
+            background-image: url('./img/bg-img/burgerbar-bg.png');
+            background-repeat: repeat;
+            background-size: auto;
             z-index: 4;
             margin: 0px;
             padding: 0px;
+            padding-top: 183px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
         }
 
         .nav-active {
@@ -724,7 +738,7 @@
                 height: 300px;
                 background-image: url('./img/test-splatoon-2.webp');
                 align-self: flex-end;
-                transform: translate(-20px,0%);
+                transform: translate(-20px, 0%);
             }
 
             /* card's zone */
@@ -925,7 +939,7 @@
             <div class="fb-zone">
                 <div class="fb-page" data-href="https://www.facebook.com/fireacestore/" data-tabs="timeline"
                     data-width="340" data-height="443" data-small-header="true" data-adapt-container-width="false"
-                    data-hide-cover="false" data-show-facepile="false" data-lazy="false">
+                    data-hide-cover="false" data-show-facepile="false" data-lazy="true">
                     <blockquote cite="https://www.facebook.com/fireacestore/" class="fb-xfbml-parse-ignore"><a
                             href="https://www.facebook.com/fireacestore/">恆志的店</a></blockquote>
                 </div>
@@ -1112,7 +1126,7 @@
                         x = 47 + 31;
                     }
                     else {
-                        x = 47 + 81; 
+                        x = 47 + 81;
                     }
 
                     note.classList.add('note');
@@ -1201,10 +1215,12 @@
                 let burger = document.querySelector('.nav-burger');
                 let navContent = document.querySelector('.nav-content');
                 let navBar = document.querySelector('.nav-bar');
+                let logo = document.querySelector('.logo');
 
                 burger.addEventListener('click', function () {
                     navContent.classList.toggle('nav-active');
                     navBar.classList.toggle('nav-active');
+                    logo.classList.toggle('nav-active');
                 })
             },
         }).mount('#app')
