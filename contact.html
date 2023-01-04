@@ -34,10 +34,15 @@
         /* nav */
         nav {
             width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .nav-zone {
+            width: 100%;
             height: 87px;
-            padding: 14px 0px;
             position: absolute;
-            z-index: 1;
+            z-index: 5;
         }
 
         .logo {
@@ -46,23 +51,149 @@
             height: 83px;
             top: 0px;
             right: 17px;
+            z-index: 6;
+        }
+
+        .nav-burger {
+            display: none;
+            padding-left: 23px;
+        }
+
+        .nav-xmark {
+            display: none;
+            padding-left: 23px;
+        }
+
+        .nav-burger-menu {
+            width: 100%;
+            height: 100vh;
+            background-image: url('./img/bg-img/burgerbar-bg.png');
+            background-repeat: repeat;
+            background-size: auto;
+            display: none;
+            position: fixed;
+            z-index: 4;
+            padding-top: 180px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .nav-burger-menu a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: 0.15em;
+            margin: 10px 0px;
+        }
+
+        .nav-burger-menu * {
+            width: 120px;
+            color: white;
+        }
+
+        .nav-burger-menu>* {
+            margin: 15px;
+        }
+
+        .burger-introduce {
+            position: relative;
+            margin: 0px;
+        }
+
+        .introduce-contain {
+            display: none;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            opacity: 60%;
+        }
+
+        .introduce-burger-zone {
+            position: absolute;
+            top: 15px;
+            left: 100%;
+        }
+
+        .burger-drinks {
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .introduce-down {
+            display: none;
+        }
+
+        .introduce-up {
+            display: none;
+        }
+
+        .drinks-burger-zone {
+            position: absolute;
+            top: 15px;
+            left: 100%;
+        }
+
+        .drinks-contain {
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .drinks-down {
+            display: none;
+        }
+
+        .drinks-up {
+            display: none;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .links * {
+            width: auto;
+        }
+
+        .nav-active {
+            display: flex;
         }
 
         .nav-bar {
             width: 100%;
-            height: 100%;
+            height: 59px;
             background-color: #4E4441;
             opacity: 60%;
             padding: 16px 25px;
+            margin: 14px 0px;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
             color: white;
+            z-index: 6;
         }
 
-        .nav-bar>i {
+        .nav-bar i {
             font-size: 23px;
+        }
+
+        .nav-bar-fixed {
+            position: fixed;
         }
 
         .nav-center {
@@ -219,7 +350,6 @@
 
 
         /* footer */
-
         footer {
             width: 100%;
             height: 316px;
@@ -238,10 +368,23 @@
             height: 150px;
             background-image: url('./img/animation/Guitarist.png');
             background-size: cover;
+            background-color: unset;
+            border: 0px solid black;
             position: absolute;
             top: 0px;
             right: 0px;
             transform: translate(0%, -50%);
+        }
+
+        .note {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            transition-timing-function: linear;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
         }
 
         .footer-left {
@@ -290,9 +433,8 @@
         @media(min-width:768px) {
 
             /* nav  */
-            nav {
+            .nav-zone {
                 height: 110px;
-                padding: 27px 0px;
             }
 
             .logo {
@@ -301,12 +443,16 @@
                 right: 25px;
             }
 
+            .nav-burger-zone {
+                padding-left: 55px;
+            }
+
             .banner-zone {
-                height: 570px;
+                height: 240px;
             }
 
             .banner-cover {
-                height: 570px;
+                height: 240px;
             }
 
             /* contact */
@@ -385,7 +531,7 @@
 
             /* footer */
             footer {
-                height: 393px;
+                height: 294px;
                 align-items: flex-start;
                 padding-left: 46px;
                 padding-top: 25px;
@@ -436,9 +582,9 @@
         @media(min-width:1280px) {
 
             /* nav */
-            nav {
+            .nav-zone {
                 height: 167px;
-                padding: 56px 0px;
+                padding: 40px 0px;
                 font-family: 'Noto Sans TC', sans-serif;
             }
 
@@ -449,7 +595,7 @@
                 transform: translate(50%);
             }
 
-            .nav-bar>i {
+            .nav-burger-zone {
                 display: none;
             }
 
@@ -473,8 +619,10 @@
                 font-size: 20px;
             }
 
-            .nav-left>div {
+            .nav-left>a {
                 margin: 0px 30px;
+                width: 80px;
+                height: 24px;
             }
 
             .nav-right {
@@ -483,15 +631,32 @@
                 font-size: 20px;
             }
 
-            .nav-right>div {
+            .nav-right>* {
                 margin: 0px 30px;
                 width: 80px;
+            }
+
+            .nav-right>.contact {
+                height: 24px;
+            }
+
+            .nav-center a {
+                color: white;
+                text-decoration: none;
             }
 
             .links {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+            }
+
+            .banner-zone {
+                height: 400px;
+            }
+
+            .banner-cover {
+                height: 400px;
             }
 
             /* contact */
@@ -589,7 +754,7 @@
                 width: 340px;
             }
 
-            .nav-left>div {
+            .nav-left>a {
                 margin: 0px 45px;
             }
 
@@ -597,10 +762,17 @@
                 width: 340px;
             }
 
-            .nav-right>div {
+            .nav-right>* {
                 margin: 0px 45px;
             }
 
+            .banner-zone {
+                height: 600px;
+            }
+
+            .banner-cover {
+                height: 600px;
+            }
 
             /* contact */
             .contact {
@@ -654,29 +826,69 @@
     <div id="app">
         <!-- nav -->
         <nav>
-            <div class="nav-bar">
-                <i class="fa-solid fa-bars"></i>
-                <div class="nav-center">
-                    <div class="nav-left">
-                        <div class="introduce">商品介紹</div>
-                        <div class="menu">飲食菜單</div>
+            <div class="nav-zone">
+                <div class="nav-bar">
+                    <div class="nav-burger-zone">
+                        <div class="nav-burger nav-active">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="nav-xmark">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
                     </div>
-                    <div class="nav-right">
-                        <div class="contact">聯絡我們</div>
-                        <div class="links">
-                            <div class="facebook"><i class="fa-brands fa-facebook-f"></i></div>
-                            <div class="instagram"><i class="fa-brands fa-square-instagram"></i></div>
+                    <div class="nav-center">
+                        <div class="nav-left">
+                            <a class="introduce" href="./items-first.html">商品介紹</a>
+                            <a class="menu" href="./menu.html">飲食菜單</a>
+                        </div>
+                        <div class="nav-right">
+                            <a class="contact" href="./contact.html">聯絡我們</a>
+                            <div class="links">
+                                <a class="facebook" href="https://www.facebook.com/fireacestore/"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="instagram" href="https://www.instagram.com/hengzhi34/"><i class="fa-brands fa-square-instagram"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="nav-burger-menu">
+                    <div class="burger-introduce">
+                        <a href="./items-first.html">商品介紹</a>
+                        <div class="introduce-contain">
+                            <a href="./items-cake.html">蛋糕</a>
+                            <a href="./items-snacks.html">手作點心</a>
+                            <div class="burger-drinks">
+                                <a href="./items-drinks.html">飲品</a>
+                                <div class="drinks-contain">
+                                    <a href="">咖啡</a>
+                                    <a href="">養生飲品</a>
+                                    <a href="">飲料</a>
+                                </div>
+                                <div class="drinks-burger-zone">
+                                    <div class="drinks-down nav-active"><i class="fa-solid fa-chevron-down"></i></div>
+                                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="introduce-burger-zone">
+                            <div class="introduce-down nav-active"><i class="fa-solid fa-chevron-down"></i></div>
+                            <div class="introduce-up"><i class="fa-solid fa-chevron-up"></i></div>
+                        </div>
+                    </div>
+                    <a href="./menu.html">飲食菜單</a>
+                    <a href="/contact.html">聯絡我們</a>
+                    <div class="links">
+                        <a class="facebook" href="https://www.facebook.com/fireacestore/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="instagram" href="https://www.instagram.com/hengzhi34/"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </div>
+                <a href="./index.html"><img class="logo" src="./img/fireaceLogo.png" alt=""></a>
             </div>
-            <img class="logo" src="./img/fireaceLogo.png" alt="">
+            <div class="banner-zone">
+                <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
+                    <div class="banner-cover" :style="{backgroundImage: 'url('+image.img+')'}"></div>
+                </div>
+            </div>
         </nav>
-        <div class="banner-zone">
-            <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
-                <div class="banner-cover" :style="{backgroundImage: 'url('+image.img+')'}"></div>
-            </div>
-        </div>
 
 
         <div class="contact">
@@ -772,9 +984,10 @@
                 </div>
             </div>
         </div>
+
         <!-- footer -->
         <footer>
-            <div class="guitarist"></div>
+            <button @click="sings()" type="button" class="guitarist"></button>
             <div class="footer-left">
                 <div class="footer-logo"></div>
                 <div class="footer-text">
@@ -812,10 +1025,65 @@
                             img: './img/Banner/wooden-table-with-cup-coffee.jpg',
                         }
                     ],
+                    notes: [
+                        'url(./img/animation/4.png)',
+                        'url(./img/animation/5.png)',
+                        'url(./img/animation/7.png)',
+                    ],
                 }
             },
-            method: {
+            methods: {
+                // guitarist sings
+                sings() {
+                    let noteSign = this.notes[Math.floor(Math.random() * 3)];
+                    let note = document.createElement('div');
+                    const footer = document.querySelector('footer');
+                    let remain = 3000;
+                    let y = -30;
+                    let x = 47;
+                    let o = 3000;
+                    let count = 0;
+                    let way = Math.floor(Math.random() * 3) - 1;
 
+                    if (window.innerWidth < 768) {
+                        x = 47;
+                    }
+                    else if (window.innerWidth < 1280) {
+                        x = 47 + 31;
+                    }
+                    else {
+                        x = 47 + 81;
+                    }
+
+                    note.classList.add('note');
+                    note.style.backgroundImage = noteSign;
+                    note.style.top = y + 'px';
+                    note.style.right = x + 'px';
+                    footer.appendChild(note);
+
+
+                    let trytrysee = window.setInterval(function () {
+                        remain -= 10;
+                        count += 1;
+
+                        if (count == 20) {
+                            way = Math.floor(Math.random() * 3) - 1;
+                            count = 0;
+                        }
+
+                        y += way;
+                        x += 1;
+                        note.style.top = y + 'px';
+                        note.style.right = x + 'px';
+                        note.style.opacity = remain / o;
+                        if (remain <= 0) {
+                            footer.removeChild(note);
+                            note = '';
+                            window.clearInterval(trytrysee);
+                        }
+                    }, 10);
+                    return;
+                },
             },
             mounted() {
                 // nav - banners
@@ -840,6 +1108,46 @@
                         counter++;
                     }
                 }), 5000);
+
+                //nav burger menu
+                let navBar = document.querySelector('.nav-bar');
+                let logo = document.querySelector('.logo');
+                let burgerZone = document.querySelector('.nav-burger-zone');
+                let burger = document.querySelector('.nav-burger');
+                let xmark = document.querySelector('.nav-xmark');
+                let burgerMenu = document.querySelector('.nav-burger-menu');
+
+                burgerZone.addEventListener('click', function () {
+                    navBar.classList.toggle('nav-bar-fixed');
+                    logo.classList.toggle('nav-bar-fixed');
+                    burger.classList.toggle('nav-active');
+                    xmark.classList.toggle('nav-active');
+                    burgerMenu.classList.toggle('nav-active');
+                });
+
+                //introduce burger zone 
+                let introduceBurger = document.querySelector('.introduce-burger-zone');
+                let introduceDown = document.querySelector('.introduce-down');
+                let introduceUp = document.querySelector('.introduce-up');
+                let introduceContain = document.querySelector('.introduce-contain');
+
+                introduceBurger.addEventListener('click', function () {
+                    introduceDown.classList.toggle('nav-active');
+                    introduceUp.classList.toggle('nav-active');
+                    introduceContain.classList.toggle('nav-active');
+                });
+
+                // drinks burger zone
+                let drinksBurger = document.querySelector('.drinks-burger-zone');
+                let drinksDown = document.querySelector('.drinks-down');
+                let drinksUp = document.querySelector('.drinks-up');
+                let drinksContain = document.querySelector('.drinks-contain');
+
+                drinksBurger.addEventListener('click', function () {
+                    drinksDown.classList.toggle('nav-active');
+                    drinksUp.classList.toggle('nav-active');
+                    drinksContain.classList.toggle('nav-active');
+                });
             },
         }).mount('#app')
     </script>
