@@ -137,27 +137,6 @@
             display: none;
         }
 
-        .drinks-burger-zone {
-            position: absolute;
-            top: 15px;
-            left: 100%;
-        }
-
-        .drinks-contain {
-            display: none;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .drinks-down {
-            display: none;
-        }
-
-        .drinks-up {
-            display: none;
-        }
-
         .links {
             display: flex;
             flex-direction: row;
@@ -745,15 +724,6 @@
                             <a href="./items-snacks.html">手作點心</a>
                             <div class="burger-drinks">
                                 <a href="./items-drinks.html">飲品</a>
-                                <div class="drinks-contain">
-                                    <a href="">咖啡</a>
-                                    <a href="">養生飲品</a>
-                                    <a href="">飲料</a>
-                                </div>
-                                <div class="drinks-burger-zone">
-                                    <div class="drinks-down nav-active"><i class="fa-solid fa-chevron-down"></i></div>
-                                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
-                                </div>
                             </div>
                         </div>
                         <div class="introduce-burger-zone">
@@ -792,14 +762,7 @@
                 <div class="link-cake"><a href="./items-cake.html">蛋糕</a></div>
                 <div class="link-snacks"><a href="./items-snacks.html">手做點心</a></div>
                 <div class="link-drinks">
-                    飲品
-                    <ul class="link-drinks-contain">
-                        <li><a href="./items-drinks.html">咖啡</a></li>
-                        <li><a href="./items-drinks.html">養生飲品</a></li>
-                        <li><a href="./items-drinks.html">飲品</a></li>
-                    </ul>
-                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
-                    <div class="drinks-down"><i class="fa-solid fa-chevron-down"></i></div>
+                    <a href="./items-drinks.html">飲品</a>
                 </div>
             </div>
             <a v-for="( image , index ) in blockBanner " :key=" index " class="block" :href=image.address>

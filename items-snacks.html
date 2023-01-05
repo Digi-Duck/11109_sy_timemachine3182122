@@ -137,27 +137,6 @@
             display: none;
         }
 
-        .drinks-burger-zone {
-            position: absolute;
-            top: 15px;
-            left: 100%;
-        }
-
-        .drinks-contain {
-            display: none;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .drinks-down {
-            display: none;
-        }
-
-        .drinks-up {
-            display: none;
-        }
-
         .links {
             display: flex;
             flex-direction: row;
@@ -497,6 +476,21 @@
                 height: 240px;
             }
 
+            /* swiper */
+            .items-zone{
+                height: 830px;
+            }
+
+            .swiper-zone {
+                width: 600px;
+                height: 400px;
+            }
+
+            .swiper-slide {
+                width: 300px;
+                height: 400px;
+            }
+
             /* footer */
             footer {
                 height: 294px;
@@ -756,15 +750,6 @@
                             <a href="./items-snacks.html">手作點心</a>
                             <div class="burger-drinks">
                                 <a href="./items-drinks.html">飲品</a>
-                                <div class="drinks-contain">
-                                    <a href="">咖啡</a>
-                                    <a href="">養生飲品</a>
-                                    <a href="">飲料</a>
-                                </div>
-                                <div class="drinks-burger-zone">
-                                    <div class="drinks-down nav-active"><i class="fa-solid fa-chevron-down"></i></div>
-                                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
-                                </div>
                             </div>
                         </div>
                         <div class="introduce-burger-zone">
@@ -794,23 +779,18 @@
         <!-- pages -->
         <div class="items-zone">
             <div class="route">
-                <a href="">首頁</a>
+                <a href="./index.html">首頁</a>
                 >
-                <span>商品介紹</span>
+                <a href="./items-first.html">商品介紹</a>
+                >
+                <span>手作點心</span>
             </div>
             <div class="pages">
                 <h2>商品介紹</h2>
-                <div class="link-cake"><a href="">蛋糕</a></div>
-                <div class="link-snacks"><a href="">手做點心</a></div>
+                <div class="link-cake"><a href="./items-cake.html">蛋糕</a></div>
+                <div class="link-snacks"><a href="./items-snacks.html">手做點心</a></div>
                 <div class="link-drinks">
-                    飲品
-                    <ul class="link-drinks-contain">
-                        <li><a href="">咖啡</a></li>
-                        <li><a href="">養生飲品</a></li>
-                        <li><a href="">飲品</a></li>
-                    </ul>
-                    <div class="drinks-up"><i class="fa-solid fa-chevron-up"></i></div>
-                    <div class="drinks-down"><i class="fa-solid fa-chevron-down"></i></div>
+                    <a href="./items-drinks.html">飲品</a>
                 </div>
             </div>
             <!-- swiper zone -->
@@ -883,46 +863,34 @@
                     width: window.innerWidth,
                     items: [
                         {
-                            img250: './img/items/cake/250/原味巴斯克蛋糕.png',
-                            img300: './img/items/cake/300/原味巴斯克蛋糕.png',
-                            img400: './img/items/cake/400/原味巴斯克蛋糕.png',
-                            name: '原味巴斯克蛋糕',
+                            img250: './img/items/homemade/250/低卡手工餅乾.png',
+                            img300: './img/items/homemade/300/低卡手工餅乾.png',
+                            img400: './img/items/homemade/400/低卡手工餅乾.png',
+                            name: '低卡手工餅乾',
                         },
                         {
-                            img250: './img/items/cake/250/蜜紅豆巴斯克蛋糕.png',
-                            img300: './img/items/cake/300/蜜紅豆巴斯克蛋糕.png',
-                            img400: './img/items/cake/400/蜜紅豆巴斯克蛋糕.png',
-                            name: '蜜紅豆巴斯克蛋糕',
+                            img250: './img/items/homemade/250/杏仁瓦片.png',
+                            img300: './img/items/homemade/300/杏仁瓦片.png',
+                            img400: './img/items/homemade/400/杏仁瓦片.png',
+                            name: '杏仁瓦片',
                         },
                         {
-                            img250: './img/items/cake/250/愛爾蘭奶酒慕斯蛋糕.png',
-                            img300: './img/items/cake/300/愛爾蘭奶酒慕斯蛋糕.png',
-                            img400: './img/items/cake/400/愛爾蘭奶酒慕斯蛋糕.png',
-                            name: '愛爾蘭奶酒慕斯蛋糕',
+                            img250: './img/items/homemade/250/檸檬塔.png',
+                            img300: './img/items/homemade/300/檸檬塔.png',
+                            img400: './img/items/homemade/400/檸檬塔.png',
+                            name: '檸檬塔',
                         },
                         {
-                            img250: './img/items/cake/250/戚風蛋糕.png',
-                            img300: './img/items/cake/300/戚風蛋糕.png',
-                            img400: './img/items/cake/400/戚風蛋糕.png',
-                            name: '戚風蛋糕',
+                            img250: './img/items/homemade/250/義式硬布丁.png',
+                            img300: './img/items/homemade/300/義式硬布丁.png',
+                            img400: './img/items/homemade/400/義式硬布丁.png',
+                            name: '義式硬布丁',
                         },
                         {
-                            img250: './img/items/cake/250/濃醇巧克力蛋糕.png',
-                            img300: './img/items/cake/300/濃醇巧克力蛋糕.png',
-                            img400: './img/items/cake/400/濃醇巧克力蛋糕.png',
-                            name: '濃醇巧克力蛋糕',
-                        },
-                        {
-                            img250: './img/items/cake/250/老奶奶檸檬蛋糕.png',
-                            img300: './img/items/cake/300/老奶奶檸檬蛋糕.png',
-                            img400: './img/items/cake/400/老奶奶檸檬蛋糕.png',
-                            name: '老奶奶檸檬蛋糕',
-                        },
-                        {
-                            img250: './img/items/cake/250/重乳酪.png',
-                            img300: './img/items/cake/300/重乳酪.png',
-                            img400: './img/items/cake/400/重乳酪.png',
-                            name: '重乳酪蛋糕',
+                            img250: './img/items/homemade/250/草莓塔.png',
+                            img300: './img/items/homemade/300/草莓塔.png',
+                            img400: './img/items/homemade/400/草莓塔.png',
+                            name: '草莓塔',
                         },
                     ],
                     // footer's notes effects.
