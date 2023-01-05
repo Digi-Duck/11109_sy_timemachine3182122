@@ -246,6 +246,11 @@
             margin-bottom: 30px;
         }
 
+        .route>a:hover {
+            text-decoration: underline;
+            color: #EC9B5A;
+        }
+
         .pages {
             display: flex;
             flex-direction: column;
@@ -255,6 +260,7 @@
         }
 
         .pages>a {
+            background-color: rgb(255, 237, 203);
             width: 240px;
             height: 30px;
             border: 1px solid black;
@@ -267,7 +273,7 @@
         }
 
         .pages>a:hover {
-            background-color: #fff;
+            background-color: #EC9B5A;
         }
 
         a {
@@ -293,6 +299,15 @@
             align-items: center;
             background-color: #E8BF9E;
             margin-bottom: 30px;
+        }
+
+        .block-hover{
+            transition: all 1s;
+        }
+
+        .block:hover .block-hover{
+            transform: scale(1.1);
+            
         }
 
         .block>div {
@@ -619,7 +634,7 @@
                 width: 230px;
                 padding-top: 126px;
                 padding-right: 30px;
-                border-right: 2px solid black;
+                border-right: 2px solid rgba(132,109,90,0.2);
             }
 
             h2 {
@@ -629,6 +644,7 @@
             }
 
             .pages>a {
+                background-color: rgba(0,0,0,0);
                 border: none;
                 border-bottom: 2px dotted black;
                 border-radius: 0px;
@@ -814,7 +830,7 @@
                         <p class="chi">{{image.name}}</p>
                         <p class="eng">{{image.nameEng}}</p>
                     </div>
-                    <div :style="{backgroundImage: 'url('+image.img+')'}"></div>
+                    <div class="block-hover" :style="{backgroundImage: 'url('+image.img+')'}"></div>
                 </a>
             </div>
         </div>
