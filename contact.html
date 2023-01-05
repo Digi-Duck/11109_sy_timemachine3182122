@@ -219,6 +219,7 @@
 
         /* 手機板聯絡我們標題 */
         .contact-title-block1 {
+            width: 300px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -283,9 +284,43 @@
 
 
         /* store */
-        .store-block {
+        .store-contact {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .store-zone {
+            margin-top: 58px;
+            position: relative;
+            width: 358px;
+            height: 243px;
+        }
+
+        .store-block {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .store {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            transition-duration: 0.3s;
+            transition-timing-function: linear;
+            opacity: 0;
+        }
+
+        .store-active {
+            opacity: 1;
         }
 
 
@@ -300,15 +335,6 @@
             justify-content: flex-start;
             align-items: center;
             position: relative;
-        }
-
-        .store {
-            margin-top: 58px;
-            width: 358px;
-            height: 243px;
-            background-image: url('./img/store.jpg');
-            background-size: cover;
-            background-position: center center;
         }
 
         .map1 {
@@ -481,9 +507,8 @@
 
 
             /* store */
-            .store {
+            .store-zone {
                 width: 485px;
-                margin-top: 60px;
                 margin-bottom: 50px;
             }
 
@@ -640,7 +665,7 @@
 
             /* contact */
             .contact {
-                height: 1024px;
+                height: 1050px;
             }
 
             .contact-title-block2 {
@@ -656,6 +681,7 @@
                 margin-top: 80px;
 
                 display: flex;
+                flex-direction: row;
                 justify-content: center;
             }
 
@@ -755,7 +781,7 @@
 
             /* contact */
             .contact {
-                height: 985px;
+                height: 1050px;
             }
 
             .contact-title-block2 {
@@ -875,8 +901,11 @@
             <div class="store-contact">
                 <!-- store -->
                 <!-- 店內照片輪播 -->
-                <div class="store-block">
-                    <div class="store"></div>
+                <div class="store-zone">
+                    <div v-for="( image , index ) in storeBanner " :key=" index " class="store-block">
+                        <div v-if="width < 768" :style="{backgroundImage: 'url('+image.img375+')'}" class="store"></div>
+                        <div v-else :style="{backgroundImage: 'url('+image.img768+')'}" class="store"></div>
+                    </div>
                 </div>
                 <!-- contact -->
                 <div class="contact-title-block1">
@@ -1013,6 +1042,28 @@
                         'url(./img/animation/5.png)',
                         'url(./img/animation/7.png)',
                     ],
+                    storeBanner: [
+                        {
+                            img375: './img/contact/375/1.png',
+                            img768: './img/contact/768-1920/1.png',
+                        },
+                        {
+                            img375: './img/contact/375/2.png',
+                            img768: './img/contact/768-1920/2.png',
+                        },
+                        {
+                            img375: './img/contact/375/3.png',
+                            img768: './img/contact/768-1920/3.png',
+                        },
+                        {
+                            img375: './img/contact/375/4.png',
+                            img768: './img/contact/768-1920/4.png',
+                        },
+                        {
+                            img375: './img/contact/375/5.png',
+                            img768: './img/contact/768-1920/5.png',
+                        },
+                    ],
                 }
             },
             methods: {
@@ -1077,7 +1128,12 @@
                 let cover = document.querySelector('.cover');
                 let counter = 0;
 
+                //store banners
+                let stores = document.querySelectorAll('.store');
+                let storesCounter = 0 ;
+
                 banners[banners.length - 1].classList.add('banner-active');
+                stores[stores.length - 1].classList.add('store-active');
                 let timeoutID = window.setInterval((() => {
                     for (let i = 0; i < banners.length; i++) {
                         if (i == counter) {
@@ -1087,13 +1143,31 @@
                             banners[i].classList.remove('banner-active');
                         }
                     }
+
+                    for (let j = 0; j < stores.length; j++) {
+                        if (j == storesCounter) {
+                            stores[j].classList.add('store-active');
+                        }
+                        else {
+                            stores[j].classList.remove('store-active');
+                        }
+                    }
+
                     if (counter == (banners.length - 1)) {
                         counter = 0;
                     }
                     else {
                         counter++;
                     }
+
+                    if (storesCounter == (stores.length - 1)) {
+                        storesCounter = 0;
+                    }
+                    else {
+                        storesCounter++;
+                    }
                 }), 5000);
+
 
                 //nav burger menu
                 let navBar = document.querySelector('.nav-bar');
