@@ -772,7 +772,10 @@
             </div>
             <div class="banner-zone">
                 <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
-                    <div class="banner-cover" :style="{backgroundImage: 'url('+image.img+')'}"></div>
+                    <div v-if="width < 768" :style="{backgroundImage: 'url('+image.img375+')'}" class="banner-cover"></div>
+                    <div v-else-if="width < 1280" :style="{backgroundImage: 'url('+image.img768+')'}" class="banner-cover"></div>
+                    <div v-else-if="width < 1903" :style="{backgroundImage: 'url('+image.img1280+')'}" class="banner-cover"></div>
+                    <div v-else :style="{backgroundImage: 'url('+image.img1903+')'}" class="banner-cover"></div>
                 </div>
             </div>
         </nav>
@@ -839,15 +842,25 @@
                 return {
                     coverBanner: [
                         {
-                            img: './img/Banner/92848885_2083120765166692_5703028897579270144_n.jpg'
+                            img375: './img/nav/375/1.png',
+                            img768: './img/nav/768/1.png',
+                            img1280: './img/nav/1280/1.png',
+                            img1903: './img/nav/1903/1.png',
                         },
                         {
-                            img: './img/Banner/IMG_9770.JPG',
+                            img375: './img/nav/375/2.png',
+                            img768: './img/nav/768/2.png',
+                            img1280: './img/nav/1280/2.png',
+                            img1903: './img/nav/1903/2.png',
                         },
                         {
-                            img: './img/Banner/wooden-table-with-cup-coffee.jpg',
+                            img375: './img/nav/375/3.png',
+                            img768: './img/nav/768/3.png',
+                            img1280: './img/nav/1280/3.png',
+                            img1903: './img/nav/1903/3.png',
                         }
                     ],
+                    width: window.innerWidth,
                     // block's file in vue.
                     blockBanner: [
                         {
@@ -878,6 +891,9 @@
                 }
             },
             methods: {
+                onResize() {
+                    this.width = window.innerWidth;
+                },
                 // guitarist sings
                 sings() {
                     let noteSign = this.notes[Math.floor(Math.random() * 3)];

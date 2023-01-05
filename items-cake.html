@@ -348,8 +348,15 @@
             background-size: cover;
             width: 300px;
             height: 400px;
-            background-color: #fff;
+            background-color: #e4ccb9;
             border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
         }
 
         .swiper-slide img {
@@ -367,6 +374,21 @@
 
         .swiper-pagination {
             display: none;
+        }
+
+        .img250 {
+            width: 250px;
+            height: 250px;
+        }
+
+        .img300 {
+            width: 300px;
+            height: 300px;
+        }
+
+        .img400 {
+            width: 400px;
+            height: 400px;
         }
 
         /* footer */
@@ -601,6 +623,21 @@
                 height: 400px;
             }
 
+            /* swiper */
+            .items-zone{
+                height: 1100px;
+            }
+
+            .swiper-zone {
+                width: 800px;
+                height: 600px;
+            }
+
+            .swiper-slide {
+                width: 400px;
+                height: 600px;
+            }
+
             /* footer */
             .guitarist {
                 margin-right: 81px;
@@ -652,6 +689,21 @@
 
             .banner-cover {
                 height: 600px;
+            }
+
+            /* swiper */
+            .items-zone{
+                height: 1200px;
+            }
+
+            .swiper-zone {
+                width: 900px;
+                height: 700px;
+            }
+
+            .swiper-slide {
+                width: 500px;
+                height: 700px;
             }
 
             /* footer */
@@ -731,7 +783,10 @@
             </div>
             <div class="banner-zone">
                 <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
-                    <div class="banner-cover" :style="{backgroundImage: 'url('+image.img+')'}"></div>
+                    <div v-if="width < 768" :style="{backgroundImage: 'url('+image.img375+')'}" class="banner-cover"></div>
+                    <div v-else-if="width < 1280" :style="{backgroundImage: 'url('+image.img768+')'}" class="banner-cover"></div>
+                    <div v-else-if="width < 1903" :style="{backgroundImage: 'url('+image.img1280+')'}" class="banner-cover"></div>
+                    <div v-else :style="{backgroundImage: 'url('+image.img1903+')'}" class="banner-cover"></div>
                 </div>
             </div>
         </nav>
@@ -762,12 +817,12 @@
             <div class="swiper-zone">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide"><i class="fa-solid fa-bars"></i></div>
+                        <div v-for="( item , index ) in items " :key=" index " class="swiper-slide">
+                            <div v-if="width <= 768" :style="{backgroundImage: 'url('+item.img250+')'}" class="img250"></div>
+                            <div v-else-if="width <= 1280" :style="{backgroundImage: 'url('+item.img300+')'}" class="img300"></div>
+                            <div v-else :style="{backgroundImage: 'url('+item.img400+')'}" class="img400"></div>
+                            {{item.name}}
+                        </div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -807,14 +862,68 @@
                 return {
                     coverBanner: [
                         {
-                            img: './img/Banner/92848885_2083120765166692_5703028897579270144_n.jpg'
+                            img375: './img/nav/375/1.png',
+                            img768: './img/nav/768/1.png',
+                            img1280: './img/nav/1280/1.png',
+                            img1903: './img/nav/1903/1.png',
                         },
                         {
-                            img: './img/Banner/IMG_9770.JPG',
+                            img375: './img/nav/375/2.png',
+                            img768: './img/nav/768/2.png',
+                            img1280: './img/nav/1280/2.png',
+                            img1903: './img/nav/1903/2.png',
                         },
                         {
-                            img: './img/Banner/wooden-table-with-cup-coffee.jpg',
+                            img375: './img/nav/375/3.png',
+                            img768: './img/nav/768/3.png',
+                            img1280: './img/nav/1280/3.png',
+                            img1903: './img/nav/1903/3.png',
                         }
+                    ],
+                    width: window.innerWidth,
+                    items: [
+                        {
+                            img250: './img/items/cake/250/原味巴斯克蛋糕.png',
+                            img300: './img/items/cake/300/原味巴斯克蛋糕.png',
+                            img400: './img/items/cake/400/原味巴斯克蛋糕.png',
+                            name: '原味巴斯克蛋糕',
+                        },
+                        {
+                            img250: './img/items/cake/250/蜜紅豆巴斯克蛋糕.png',
+                            img300: './img/items/cake/300/蜜紅豆巴斯克蛋糕.png',
+                            img400: './img/items/cake/400/蜜紅豆巴斯克蛋糕.png',
+                            name: '蜜紅豆巴斯克蛋糕',
+                        },
+                        {
+                            img250: './img/items/cake/250/愛爾蘭奶酒慕斯蛋糕.png',
+                            img300: './img/items/cake/300/愛爾蘭奶酒慕斯蛋糕.png',
+                            img400: './img/items/cake/400/愛爾蘭奶酒慕斯蛋糕.png',
+                            name: '愛爾蘭奶酒慕斯蛋糕',
+                        },
+                        {
+                            img250: './img/items/cake/250/戚風蛋糕.png',
+                            img300: './img/items/cake/300/戚風蛋糕.png',
+                            img400: './img/items/cake/400/戚風蛋糕.png',
+                            name: '戚風蛋糕',
+                        },
+                        {
+                            img250: './img/items/cake/250/濃醇巧克力蛋糕.png',
+                            img300: './img/items/cake/300/濃醇巧克力蛋糕.png',
+                            img400: './img/items/cake/400/濃醇巧克力蛋糕.png',
+                            name: '濃醇巧克力蛋糕',
+                        },
+                        {
+                            img250: './img/items/cake/250/老奶奶檸檬蛋糕.png',
+                            img300: './img/items/cake/300/老奶奶檸檬蛋糕.png',
+                            img400: './img/items/cake/400/老奶奶檸檬蛋糕.png',
+                            name: '老奶奶檸檬蛋糕',
+                        },
+                        {
+                            img250: './img/items/cake/250/重乳酪.png',
+                            img300: './img/items/cake/300/重乳酪.png',
+                            img400: './img/items/cake/400/重乳酪.png',
+                            name: '重乳酪蛋糕',
+                        },
                     ],
                     // footer's notes effects.
                     notes: [
@@ -825,6 +934,9 @@
                 }
             },
             methods: {
+                onResize() {
+                    this.width = window.innerWidth;
+                },
                 // guitarist sings
                 sings() {
                     let noteSign = this.notes[Math.floor(Math.random() * 3)];
@@ -964,6 +1076,9 @@
                     drinksUp.classList.toggle('nav-active');
                     drinksContain.classList.toggle('nav-active');
                 });
+
+                //window resize 
+                window.addEventListener('resize', this.onResize);
             },
         }).mount('#app')
     </script>
