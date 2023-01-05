@@ -799,7 +799,7 @@
                     <div class="drinks-down"><i class="fa-solid fa-chevron-down"></i></div>
                 </div>
             </div>
-            <a v-for="( image , index ) in blockBanner " :key=" index " class="block" href="">
+            <a v-for="( image , index ) in blockBanner " :key=" index " class="block" :href=image.address>
                 <div>
                     <p class="chi">{{image.name}}</p>
                     <p class="eng">{{image.nameEng}}</p>
@@ -854,16 +854,19 @@
                             img: "./img/introduce/戚風蛋糕.png",
                             name: '蛋糕',
                             nameEng: 'Cake',
+                            address: './items-cake.html',
                         },
                         {
                             img: "./img/introduce/20953705_1198401686971942_8234353371634747719_n.png",
                             name: '手作點心',
                             nameEng: 'Homemade-snake',
+                            address: './items-snacks.html',
                         },
                         {
                             img: "./img/introduce/2.png",
                             name: '飲品',
                             nameEng: 'Drinks',
+                            address: './items-drinks.html',
                         },
                     ],
                     // footer's notes effects.
