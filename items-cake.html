@@ -217,7 +217,7 @@
 
         nav a:hover>img {
             transition-duration: 0.3s;
-            transform: translateX(50%) scale(1.1);
+            transform: scale(1.1);
         }
 
 
@@ -627,6 +627,10 @@
 
             .banner-cover {
                 height: 400px;
+            }
+
+            nav a:hover>img {
+                transform: translateX(50%) scale(1.1);
             }
 
             /* items zone */
@@ -1060,6 +1064,7 @@
                     else {
                         counter++;
                     }
+                    this.sings();
                 }), 5000);
 
                 // card - swiper
