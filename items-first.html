@@ -210,6 +210,17 @@
             opacity: 1;
         }
 
+        nav a:hover {
+            transition-duration: 0.3s;
+            scale: 1.1;
+        }
+
+        nav a:hover>img {
+            transition-duration: 0.3s;
+            transform: translateX(50%) scale(1.1);
+        }
+
+
         /* introduce */
         .introduce-zone {
             width: 100%;
@@ -302,13 +313,13 @@
             margin-bottom: 30px;
         }
 
-        .block-hover{
+        .block-hover {
             transition: all 1s;
         }
 
-        .block:hover .block-hover{
+        .block:hover .block-hover {
             transform: scale(1.1);
-            
+
         }
 
         .block>div {
@@ -635,7 +646,7 @@
                 width: 230px;
                 padding-top: 126px;
                 padding-right: 30px;
-                border-right: 2px solid rgba(132,109,90,0.2);
+                border-right: 2px solid rgba(132, 109, 90, 0.2);
             }
 
             h2 {
@@ -645,7 +656,7 @@
             }
 
             .pages>a {
-                background-color: rgba(0,0,0,0);
+                background-color: rgba(0, 0, 0, 0);
                 border: none;
                 border-bottom: 2px dotted black;
                 border-radius: 0px;
@@ -771,8 +782,10 @@
                         <div class="nav-right">
                             <a class="contact" href="./contact.html">聯絡我們</a>
                             <div class="links">
-                                <a class="facebook" href="https://www.facebook.com/fireacestore/"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="instagram" href="https://www.instagram.com/hengzhi34/"><i class="fa-brands fa-square-instagram"></i></a>
+                                <a class="facebook" href="https://www.facebook.com/fireacestore/"><i
+                                        class="fa-brands fa-facebook-f"></i></a>
+                                <a class="instagram" href="https://www.instagram.com/hengzhi34/"><i
+                                        class="fa-brands fa-square-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -795,17 +808,22 @@
                     <a href="./menu.html">飲食菜單</a>
                     <a href="/contact.html">聯絡我們</a>
                     <div class="links">
-                        <a class="facebook" href="https://www.facebook.com/fireacestore/"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a class="instagram" href="https://www.instagram.com/hengzhi34/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a class="facebook" href="https://www.facebook.com/fireacestore/"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a class="instagram" href="https://www.instagram.com/hengzhi34/"><i
+                                class="fa-brands fa-square-instagram"></i></a>
                     </div>
                 </div>
                 <a href="./index.html"><img class="logo" src="./img/fireaceLogo.png" alt=""></a>
             </div>
             <div class="banner-zone">
                 <div v-for="( image , index ) in coverBanner " :key=" index " class="banner">
-                    <div v-if="width < 768" :style="{backgroundImage: 'url('+image.img375+')'}" class="banner-cover"></div>
-                    <div v-else-if="width < 1280" :style="{backgroundImage: 'url('+image.img768+')'}" class="banner-cover"></div>
-                    <div v-else-if="width < 1903" :style="{backgroundImage: 'url('+image.img1280+')'}" class="banner-cover"></div>
+                    <div v-if="width < 768" :style="{backgroundImage: 'url('+image.img375+')'}" class="banner-cover">
+                    </div>
+                    <div v-else-if="width < 1280" :style="{backgroundImage: 'url('+image.img768+')'}"
+                        class="banner-cover"></div>
+                    <div v-else-if="width < 1903" :style="{backgroundImage: 'url('+image.img1280+')'}"
+                        class="banner-cover"></div>
                     <div v-else :style="{backgroundImage: 'url('+image.img1903+')'}" class="banner-cover"></div>
                 </div>
             </div>
@@ -938,7 +956,7 @@
                         x = 47 + 31;
                     }
                     else {
-                        x = 47 + 81; 
+                        x = 47 + 81;
                     }
 
                     note.classList.add('note');
