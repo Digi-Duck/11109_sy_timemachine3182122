@@ -166,8 +166,6 @@
             margin: 0px;
         }
 
-        
-
         .introduce-contain {
             display: none;
             position: relative;
@@ -440,7 +438,7 @@
         }
 
         .title {
-            width: 310px;
+            width: 100%;
             height: 80px;
             display: flex;
             flex-direction: column;
@@ -454,7 +452,7 @@
             height: 53px;
             background-image: url('./img/coffee-bean-left-768.png');
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
         }
 
         .title-up {
@@ -468,11 +466,15 @@
         }
 
         .title-text {
-            width: 160px;
+            width: 100%;
             letter-spacing: 0.25em;
             font-size: 32px;
             font-weight: 400;
             font-family: 'Noto Sans TC', sans-serif;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
         .icon-right {
@@ -481,7 +483,7 @@
             height: 53px;
             background-image: url('./img/coffee-bean-right-768.png');
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
         }
 
         .dotted-line {
@@ -489,7 +491,10 @@
             line-height: 19px;
             letter-spacing: 0.38em;
             font-weight: bold;
-            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
         .dotted-line-768 {
